@@ -1,0 +1,69 @@
+<div class="container-fluid p-0">
+  <div class="row mt-3">
+
+    <div class="col-lg-3 col-sm-6 col-xs-12 pb-3">
+      <div class="card h-100 border-0 shadow accent-danger">
+        <div class="card-body text-center">
+          <i class="fas fa-percent large text-gray-300 float-left ml-2 mr-1 my-1"></i>
+          <span class="font-weight-bold large text-muted">{{optionsquote}}</span> of target FX Options sales ("Optionsquote")
+        </div>
+      </div>
+    </div>
+
+    <div *ngFor="let tile of kpiTiles" class="col-lg-3 col-sm-6 col-xs-12 pb-3">
+      <div class="card h-100 border-0 shadow cursor-pointer accent-primary hover-light" (click)="showClientsTable(tile.type)">
+        <div class="card-body text-center">
+          <i class="{{tile.icon}} large text-gray-300 float-left ml-2 mr-1 my-1"></i>
+          <i class="fas fa-plus large text-primary float-right ml-2 mr-1 my-1"></i>
+          <span class="font-weight-bold large text-muted">{{tile.value}}</span> {{tile.text}}
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse col-xl-12 col-xxl-6 mb-3" id="activeClientsTableContainer">
+      <div class="card h-100 border-0 shadow">
+        <div class="card-body">
+          <div class="mb-3 d-flex justify-content-center">
+            <span class="badge badge-success cursor-default shadow-sm mx-1">active</span>
+            <span class="badge badge-warning cursor-default shadow-sm mx-1">previously active</span>
+            <span class="badge badge-light cursor-default shadow-sm mx-1">inactive</span>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-sm table-hover dtable" id="activeClientsTable">
+              <thead class="thead-light">
+                <tr>
+                  <th>client name <sup class="ml-1"><i class="fas fa-comment-alt"></i></sup></th>
+                  <th>coverage <sup class="ml-1"><i class="fas fa-comment-alt"></i></sup></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="2" style="text-align: center;">No data available</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- <div class="collapse my-3" id="activeClientsTableContainer">
+  <div class="table-responsive">
+    <table class="table table-sm table-hover dtable" id="activeClientsTable">
+      <thead class="thead-light">
+        <tr>
+          <th>client name <sup class="ml-1"><i class="fas fa-comment-alt"></i></sup></th>
+          <th>coverage <sup class="ml-1"><i class="fas fa-comment-alt"></i></sup></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="2" style="text-align: center;">No data available</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> -->

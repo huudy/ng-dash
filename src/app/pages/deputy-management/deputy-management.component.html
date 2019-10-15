@@ -1,0 +1,86 @@
+<div class="card border-0 shadow">
+  <div class="card-body">
+    <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#deputy-management')"></i>
+    <h2 class="sub_header">DEPUTY MANAGEMENT</h2>
+    <p>Administrate your deputy settings here.</p>
+    <p>If you grant a user deputy right he / she may view the same data you have access to in SONAR. Deputy data are automatically added to the "My View" coverage model. Modifications of deputy rights take a couple of minutes to go into effect.</p>
+  </div>
+</div>
+<div class="row mt-3">
+
+  <div class="col-md-12 col-lg-6 mb-3">
+    <div class="card border-0 shadow h-100">
+      <div class="card-body">
+        <h5 class="">Users I have granted deputy rights to</h5>
+        <app-deputy-table *ngIf="dataRetrieved" [data]="deputyGrantedData" [tableId]="deputyRightsGrantedTable">
+        </app-deputy-table>
+
+        <div class="mt-3">
+          <h5>grant or revoke deputy rights</h5>
+          <p>To modifiy existing rights please enter the modified parameters and press <em>grant deputy
+              rights</em>.
+            <p>
+              <form>
+                <div class="row">
+                  <div class="col-4 form-group">
+                    <label for="deputyReceiveUserId">user id</label>
+                    <input type="text" class="form-control" id="deputyReceiveUserId" aria-describedby="deputyReceiveUserIdHelp" placeholder="Enter user id">
+                    <small id="deputyReceiveUserIdHelp" class="form-text text-muted">P or VW-number
+                      of the user to
+                      receive deputy rights, e.g. P123456</small>
+                  </div>
+                  <div class="col-4 form-group" id="deputyReceiveDateFromGroup">
+                    <label for="deputyReceiveDateFrom">valid from</label>
+                    <input type="text" class="form-control datepickerEmit" id="deputyReceiveDateFrom" data-date-container="#deputyReceiveDateFromGroup">
+                    <small id="deputyReceiveDateFromHelp" class="form-text text-muted">leave empty
+                      to grant rights
+                      starting today</small>
+                  </div>
+                  <div class="col-4 form-group" id="deputyReceiveDateToGroup">
+                    <label for="deputyReceiveDateTo">valid to</label>
+                    <input type="text" class="form-control datepickerEmit" id="deputyReceiveDateTo" data-date-container="#deputyReceiveDateToGroup">
+                    <small id="deputyReceiveDateFromTo" class="form-text text-muted">leave empty to
+                      grant rights until
+                      further notice</small>
+                  </div>
+                </div>
+                <div class="form-inline">
+                  <div class="btn btn-primary shadow-sm btn-deputy cursor-pointer mr-3" (click)="grantDeputyRights($event)">grant deputy rights
+                  </div>
+                  <div class="btn btn-danger shadow-sm btn-deputy cursor-pointer" (click)="revokeDeputyRights($event, '#deputyReceiveUserId')">
+                    revoke deputy rights</div>
+                </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12 col-lg-6 mb-3">
+    <div class="card border-0 shadow h-100">
+      <div class="card-body">
+        <h5 class="">Other users I'm deputy for</h5>
+        <app-deputy-table *ngIf="dataRetrieved" [data]="deputyReceivedData" [tableId]="deputyRightsReceivedTable">
+        </app-deputy-table>
+
+        <div class="mt-3">
+          <h5>revoke own deputy rights</h5>
+          <p>Revoking received deputy rights goes into effect immediately after a short delay.</p>
+          <form>
+            <div class="row">
+              <div class="col-4 form-group">
+                <label for="deputyGrantUserId">user id</label>
+                <input type="text" class="form-control" id="deputyGrantUserId" aria-describedby="deputyGrantUserIdHelp" placeholder="Enter user id">
+                <small id="deputyGrantUserIdHelp" class="form-text text-muted">P or VW-number of the
+                  user granting
+                  deputy rights, e.g. P123456</small>
+              </div>
+            </div>
+            <div class="btn btn-danger shadow-sm btn-deputy cursor-pointer" (click)="revokeDeputyRights($event, '#deputyGrantUserId')">revoke deputy rights</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="card border-0 shadow">
+	<div class="card-body p-2">
+		<div class="table-responsive">
+			<table class="table table-sm mb-0">
+				<tr>
+					<td><i class="fas fa-industry text-muted"></i></td>
+					<td colspan="2">{{clientSector}}</td>
+					<td><span class="text-muted">Greenhouse gas emissions score: </span><i
+							class="fas fa-leaf {{greenhouseRatingLow}}"></i><i class="fas fa-leaf {{greenhouseRatingMedium}}"></i><i
+							class="fas fa-leaf {{greenhouseRatingHigh}}"></i>
+						<span class="text-uppercase ml-1">{{greenhouseRatingText}}</span></td>
+				</tr>
+				<tr>
+					<td><i class="fas fa-id-card text-muted"></i></td>
+					<td><span class="text-muted">NDG: </span>{{clientNdg}}</td>
+					<td><span class="text-muted">Matchcodes: </span>{{clientMatchcode}}</td>
+					<td><span class="text-muted">LEI: </span>{{clientLei}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

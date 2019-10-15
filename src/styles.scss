@@ -1,0 +1,227 @@
+/* You can add global styles to this file, and also import other style files */
+
+$enable-print-styles: false;
+
+/* change bootstrap border radius */
+
+$border-radius: .125rem;
+$border-radius-lg: .125rem;
+$border-radius-sm: .125rem;
+
+// adding an xxl breakpoint
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1600px) !default;
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px, xxl: 1540px) !default;
+
+// adding bootstrap's gray's to the list of available colors
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$theme-colors: ("gray-100": $gray-100, "gray-200": $gray-200, "gray-300": $gray-300, "gray-400": $gray-400, "gray-500": $gray-500, "gray-600": $gray-600, "gray-700": $gray-700, "gray-800": $gray-800, "gray-900": $gray-900);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// font for table
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./assets/fonts/Roboto.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+  font-family: Segoe UI;
+  background-color: var(--light);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: UniCredit;
+  font-weight: 700;
+}
+
+.large {
+  font-size: 22px;
+}
+
+
+/* accents */
+
+@each $color,
+$value in $theme-colors {
+  .accent-#{$color} {
+    position: relative;
+  }
+
+  .accent-#{$color}:after {
+    content: '';
+    display: block;
+    width: 5px;
+    height: calc(100% - 14px);
+    background: $value;
+    position: absolute;
+    left: 0px;
+    top: 7px;
+    border-radius: 0px 4px 4px 0px;
+  }
+}
+
+// additional colors
+.bg-light-green {
+  background-color: #9FCA78 !important;
+}
+
+.bg-light-red {
+  background-color: #EA5C4D !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
+}
+
+
+/* GLOBAL table styles */
+
+table.dataTable {
+  border-collapse: collapse !important;
+  font-family: "Roboto";
+  font-size: 14px;
+}
+
+.table thead th {
+  vertical-align: top !important;
+  font-weight: 400;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.table .thead-light th {
+  text-transform: uppercase;
+  letter-spacing: 0.025rem;
+  font-size: 12px;
+  background-color: var(--light) !important;
+  border-top: none;
+  color: var(--secondary);
+}
+
+
+/*.table.dataTable td.right-align {
+    padding-right: 1rem;
+    text-align: right;
+}*/
+
+.table.dataTable .right-align {
+  padding-right: 25px;
+  text-align: right;
+}
+
+.table-hover tbody tr:hover {
+  background-color: var(--gray-100);
+}
+
+.dataTables_wrapper .btn-group {
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.dataTables_wrapper:hover .btn-group {
+  opacity: 1;
+  transition: 0.5s ease;
+}
+
+
+/* User Guide*/
+
+#userGuideModal img {
+  max-width: 100%;
+}
+
+#userGuideModal h2 {
+  color: #666;
+  margin-top: 2rem;
+}
+
+// STYLE FOR MAKING PERECT SCROLLBAR ALWAYS VISIBLE
+.ps__rail-x,
+.ps__rail-y {
+  opacity: 0.6;
+}
+
+
+/* printing styles */
+
+@media print {
+  @page {
+    margin: 10mm;
+  }
+  #content {
+    margin-left: 0mm;
+    margin-right: 0mm;
+  }
+  html,
+  body {
+    min-width: 595px !important;
+  }
+  body,
+  h1,
+  h2,
+  h3,
+  ol,
+  ul,
+  div {
+    float: none;
+    position: static;
+    overflow: visible;
+    display: block;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  .navbar {
+    display: none;
+  }
+  #sidebar {
+    display: none;
+  }
+  .bg-white {
+    background: transparent !important;
+  }
+  .row {
+    display: block !important;
+  }
+  .card {
+    display: block !important;
+    page-break-inside: avoid;
+  }
+  tr,
+  diy,
+  img {
+    page-break-inside: avoid;
+  }
+  h1,
+  h3 {
+    page-break-before: always;
+  }
+  body {
+    background-color: transparent;
+    color-adjust: exact;
+    /*Firefox*/
+    -webkit-print-color-adjust: exact;
+    /*Chrome */
+  }
+}

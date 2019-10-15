@@ -1,0 +1,11 @@
+<div class="dropdown mr-2" id="coverageSelectDropdown">
+  <button class="btn dropdown-toggle text-muted" id="coverageSelectButton" data-toggle="dropdown">  <!--type="button"-->
+    <i class="{{dropdown.class}} mr-2"></i><b>{{dropdown.text}}</b>
+  </button>
+  <div class="dropdown-menu py-0">
+    <div class="btn dropdown-item text-secondary cursor-pointer" [class.disabled]="!getCoverageAllowed('user')" (click)="setCoverage('user')"> <i class="fas fa-user mr-2"></i><b>My View</b> </div>
+    <div class="btn dropdown-item text-secondary cursor-pointer" [class.disabled]="!getCoverageAllowed('team')" (click)="setCoverage('team')"> <i class="fas fa-users mr-2"></i><b>Team View</b> </div>
+    <div class="btn dropdown-item text-secondary cursor-pointer" [class.disabled]="!getCoverageAllowed('region')" (click)="setCoverage('region')"> <i class="fas fa-map-marked-alt mr-2"></i><b>Region View</b> </div>
+    <div class="btn dropdown-item text-secondary cursor-pointer" [class.disabled]="!getCoverageAllowed('division')" (click)="setCoverage('division')"> <i class="fas fa-globe mr-2"></i><b>Country View</b> </div>
+  </div>
+</div>

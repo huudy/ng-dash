@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>SONAR</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="assets/img/static/SONAR_favicon_16x16.png">
+
+  <!-- These functions need to be available globally (outside of the angular workflow) -->
+  <script>
+    function enlargeTooltip(tooltip) {
+      $(tooltip).next().height(284);
+      $(tooltip).next().width(744);
+      $(tooltip).parent().parent().tooltip('update');
+    }
+
+    function shrinkTooltip(tooltip) {
+      $(tooltip).next().height(142);
+      $(tooltip).next().width(372);
+      $(tooltip).parent().parent().tooltip('update');
+    }
+
+    function toggleTooltipSize(tooltip) {
+      if ($(tooltip).next().height() == 284) {
+        shrinkTooltip(tooltip);
+      } else {
+        enlargeTooltip(tooltip);
+      }
+      $(tooltip).parent().mouseleave(function () { shrinkTooltip(tooltip); });
+    }
+
+    function publicRouter(route) {
+      $('#publicRouter').val(route).trigger('change');
+    }
+  </script>
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<div class="card border-0 shadow">
+    <div class="card-body">
+        <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#portfolio')"></i>
+        <h2>PORTFOLIO</h2>
+        <p>Clients whose coverage has been moved to a colleague are not taken into account.</p>
+        <div class="alert alert-warning border-0 shadow-sm">This page ignores team view and colleagues assigned as deputies - it only contains data for clients you are assigend to, irrespective of the hierarchy level selected.</div>
+    </div>
+</div>
+
+<app-portfolio-kpis *ngIf="dataRetrieved" [activeClientsData]="activeClientsData" [optionsquote]="optionsquote">
+</app-portfolio-kpis>
+
+<div class="container-fluid p-0">
+    <div class="row">
+        <div class="col-lg-12 col-xl-6 mb-3 mx-auto">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <h5>Client portfolio earnings</h5>
+                    <p>Earnings across all clients you are assigned to.</p>
+                    <app-portfolio-earnings-chart *ngIf="dataRetrieved" [data]="portfolioEarningsData">
+                    </app-portfolio-earnings-chart>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-xl-6 mb-3 mx-auto">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <a href="" class="text-decoration-none small float-right" routerLink="/index/activityLevel">view activity levels <i class="fas fa-angle-right"></i></a>
+                    <h5>Clients by earnings</h5>
+                    <p>Earnings per client (all asset classes) over the last four quarters (including current). Earnings trend is the average deviation from the long term average over the last three months.</p>
+                    <app-client-earnings-table *ngIf="dataRetrieved" [data]="clientEarningsData"></app-client-earnings-table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

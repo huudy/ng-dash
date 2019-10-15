@@ -1,0 +1,14 @@
+@media only screen and (max-width: 500px) {
+  #coverageSelectDropdown {
+      display: none;
+  }
+}
+
+button, .dropdown-menu {
+  min-width: 11rem;
+}
+
+.dropdown-item {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}

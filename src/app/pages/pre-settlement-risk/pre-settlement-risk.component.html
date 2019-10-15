@@ -1,0 +1,22 @@
+<div class="card border-0 shadow">
+    <div class="card-body">
+        <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#pre-settlement-risk')"></i>
+        <h2 class="sub_header">PRE-SETTLEMENT RISK MONITORING</h2>
+
+        <h5>Limit warnigns</h5>
+        <p>Clients close to their allocated pre-settlement risk limits.</p>
+        <app-limit-warning-table *ngIf="dataRetrieved" [data]="limitWarningData"></app-limit-warning-table>
+
+    </div>
+</div>
+
+<div class="card border-0 shadow mt-3">
+    <div class="card-body">
+
+        <h5>Unutilized lines</h5>
+        <p>Clients with a utilization of their pre-settlement risk line of less than 10%.</p>
+        <p class="text-danger">Note: historic data only available since 2019-09-09.</p>
+        <app-unutilized-line-table *ngIf="dataRetrieved" [data]="lineUnutilizedData"></app-unutilized-line-table>
+
+    </div>
+</div>

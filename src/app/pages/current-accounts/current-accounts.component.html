@@ -1,0 +1,17 @@
+<div class="card border-0 shadow">
+    <div class="card-body">
+        <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#current-accounts')"></i>
+        <h2 class="sub_header">CURRENT ACCOUNTS</h2>
+        <h5>Free capital</h5>
+        <p>Total balances on your clients' current accounts</p>
+        <app-free-capital-table *ngIf="dataRetrieved" [data]="freeCapitalData"></app-free-capital-table>
+    </div>
+</div>
+
+<div class="card border-0 shadow mt-3">
+    <div class="card-body">
+        <h5>Active foreign current accounts</h5>
+        <p>Foreign currency denominated current accounts showing high activity within the last seven days</p>
+        <app-active-foreign-current-accounts-table *ngIf="dataRetrieved" [data]="activeForeignCurrentAccountsData"></app-active-foreign-current-accounts-table>
+    </div>
+</div>

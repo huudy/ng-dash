@@ -1,0 +1,20 @@
+<div class="card border-0 shadow">
+  <div class="card-body">
+    <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#market-data')"></i>
+    <h2 class="sub_header">CURRENT RATES AND ECONOMIC FORECASTS </h2>
+
+    <h4 class="mt-3">Interest Rates</h4>
+    <p>All data by <a target="_blank" href="https://www.unicreditresearch.eu/">UniCredit Research</a>.</p>
+    <app-rates-table *ngIf="dataRetrieved" [data]="ratesData"></app-rates-table>
+
+  </div>
+</div>
+
+<div class="card border-0 shadow mt-3">
+  <div class="card-body">
+
+    <h4>Exchange Rates</h4>
+    <p>Current exchange rate, average and momentum based on most recent, official ECB figures. Forecasts by <a target="_blank" href="https://www.unicreditresearch.eu/">UniCredit Research</a>.</p>
+    <app-forex-table *ngIf="dataRetrieved" [data]="forexData"></app-forex-table>
+  </div>
+</div>

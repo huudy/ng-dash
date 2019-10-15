@@ -1,0 +1,122 @@
+<div class="card border-0 shadow">
+  <div class="card-body">
+    <!-- <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle" data-toggle="modal" data-target="#userGuideModal" user-guide-link="activity-levels"></i> -->
+    <h2 class="sub_header mb-3"><span class="text-danger">one</span>markets product platform - issuance reports</h2>
+    <p>Click on distribution chanel for more details. Export tables to access more information. Tables are filterable
+      for also for fields that are not displayed, such as repsonsible sales.</p>
+
+    <div class="alert alert-info border-0">
+      <span class="font-weight-bold large text-dark">{{numberIssuancesTotal}}</span> issuances since <span
+        *ngIf="!after1745">yesterday</span><span *ngIf="after1745">today</span> 17:45
+    </div>
+  </div>
+</div>
+
+<div class="card border-0 shadow mt-3">
+  <h5 class="card-header bg-white highlight-header-primary border-bottom-0 text-primary cursor-pointer"
+    data-toggle="collapse" data-target="#primaryMarketData">
+    Primary Market <i class="fas fa-angle-down"></i>
+    <div class="float-right text-secondary">{{numberIssuancesPrimaryMarket}}</div>
+  </h5>
+  <div class="card-body collapse" id="primaryMarketData">
+    <h5 class="">issuances details</h5>
+    <app-primary-market-table *ngIf="dataRetrieved" [data]="primaryMarketData"></app-primary-market-table>
+  </div>
+</div>
+
+<div class="card border-0 shadow mt-3">
+  <h5 class="card-header bg-white highlight-header-primary border-bottom-0 text-primary cursor-pointer"
+    data-toggle="collapse" data-target="#secondaryMarketData">
+    Secondary Market <i class="fas fa-angle-down"></i>
+    <div class="float-right text-secondary">{{numberIssuancesSecondaryMarket}}</div>
+  </h5>
+
+  <div class="card-body collapse" id="secondaryMarketData">
+
+    <div class="row text-center">
+      <div class="col-6">
+        Issuances by product type
+        <app-issuance-chart *ngIf="dataRetrieved" [data]="secondaryMarketIssuancesByProductTypeData"
+          [id]="'secondaryMarketChartProductType'" [countKey]="'productType'"></app-issuance-chart>
+      </div>
+      <div class="col-6">
+        Most popular underlyings
+        <app-issuance-chart *ngIf="dataRetrieved" [data]="secondaryMarketIssuancesByUnderlyingData"
+          [id]="'secondaryMarketChartUnderlying'" [countKey]="'underlying'"></app-issuance-chart>
+      </div>
+    </div>
+
+    <h5 class="mt-3">issuances summary</h5>
+    <app-secondary-market-summary-table *ngIf="dataRetrieved" [data]="secondaryMarketSummaryData">
+    </app-secondary-market-summary-table>
+
+    <h5 class="mt-3">issuances details</h5>
+    <app-secondary-market-table *ngIf="dataRetrieved" [data]="secondaryMarketSeriesData"></app-secondary-market-table>
+  </div>
+</div>
+
+<div class="card border-0 shadow mt-3">
+  <h5 class="card-header bg-white highlight-header-primary border-bottom-0 text-primary cursor-pointer"
+    data-toggle="collapse" data-target="#dericonData">
+    Dericon <i class="fas fa-angle-down"></i>
+    <div class="float-right text-secondary">{{numberIssuancesDericon}}</div>
+  </h5>
+  <div class="card-body collapse" id="dericonData">
+    <h5 class="">issuances details</h5>
+    <app-dericon-table *ngIf="dataRetrieved" [data]="dericonData"></app-dericon-table>
+  </div>
+</div>
+
+<div class="card border-0 shadow mt-3">
+  <h5 class="card-header bg-white highlight-header-primary border-bottom-0 text-primary cursor-pointer"
+    data-toggle="collapse" data-target="#myonedirectData">
+    my.onedirect <i class="fas fa-angle-down"></i>
+    <div class="float-right text-secondary">{{numberIssuancesMyonedirect}}</div>
+  </h5>
+  <div class="card-body collapse" id="myonedirectData">
+
+    <div class="row text-center">
+      <div class="col-6">
+        Issuances by product type
+        <app-issuance-chart *ngIf="dataRetrieved" [data]="onedirectIssuancesByProductTypeData"
+          [id]="'onedirectChartProductType'" [countKey]="'productType'"></app-issuance-chart>
+      </div>
+
+      <div class="col-6">
+        Most popular underlyings
+        <app-issuance-chart *ngIf="dataRetrieved" [data]="onedirectIssuancesByUnderlyingData"
+          [id]="'onedirectChartUnderlying'" [countKey]="'underlying'"></app-issuance-chart>
+      </div>
+    </div>
+
+    <h5 class="mt-3">issuances details</h5>
+    <app-myonedirect-table *ngIf="dataRetrieved" [data]="myonedirectData"></app-myonedirect-table>
+  </div>
+</div>
+
+<div class="card border-0 shadow mt-3">
+  <h5 class="card-header bg-white highlight-header-primary border-bottom-0 text-primary cursor-pointer"
+    data-toggle="collapse" data-target="#myonemarketsData">
+    my.onemarkets <i class="fas fa-angle-down"></i>
+    <div class="float-right text-secondary">{{numberIssuancesMyonemarkets}}</div>
+  </h5>
+  <div class="card-body collapse" id="myonemarketsData">
+
+    <div class="row text-center">
+      <div class="col-6">
+        Issuances by distribution partner
+        <app-issuance-chart *ngIf="dataRetrieved" [data]="onemarketsIssuancesByDistributionPartnerData"
+          [id]="'onemarketsChartDistributionPartner'" [countKey]="'distributionPartner'"></app-issuance-chart>
+      </div>
+
+      <div class="col-6">
+        Most popular underlyings
+        <app-issuance-chart *ngIf="dataRetrieved" [data]="onemarketsIssuancesByUnderlyingData"
+          [id]="'onemarketsChartUnderlying'" [countKey]="'underlying'"></app-issuance-chart>
+      </div>
+    </div>
+
+    <h5 class="mt-3">issuances details</h5>
+    <app-myonemarkets-table *ngIf="dataRetrieved" [data]="myonemarketsData"></app-myonemarkets-table>
+  </div>
+</div>

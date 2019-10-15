@@ -1,0 +1,31 @@
+<div class="card border-0 h-100 shadow">
+  <div class="card-body">
+    <div class="font-weight-bold text-muted mb-2">Estimated share of wallet</div>
+    <p>Share of wallet gives statistically inferred estimates for the fraction of the client’s expenses per asset class
+      that we could realistically expect to cover. Estimates are inferred from the client's peer group. The confidence
+      interval indicate the range of statistically probable values for our share of the client's wallet. Please note
+      that the displayed values are an indication only.</p>
+
+    <div class="d-flex justify-content-center">
+      <div class="badge badge-success badge-sm mx-1" style="background-color: #9FCA78">our share</div>
+      <div class="badge badge-success badge-sm mx-1" style="background-color: #EA5C4D">other banks</div>
+    </div>
+    <div class="d-flex justify-content-center mt-1">
+      <div class="badge badge-success badge-sm mx-1" style="background-color: #B2B2B2">confidence interval
+      </div>
+    </div>
+    <div class="container-fluid" style="height: 180px;">
+      <app-share-of-wallet-chart [id]="'shareOfWalletAll'" [data]="data['share_all']" [name]="'all'">
+      </app-share-of-wallet-chart>
+      <app-share-of-wallet-chart [id]="'shareOfWalletFx'" [data]="data['share_fx']" [name]="'foreign exchange'">
+      </app-share-of-wallet-chart>
+    </div>
+    <div class="container-fluid" style="height: 180px;">
+      <app-share-of-wallet-chart [id]="'shareOfWalletFi'" [data]="data['share_fi']" [name]="'fixed income'">
+      </app-share-of-wallet-chart>
+      <app-share-of-wallet-chart [id]="'shareOfWalletIv'" [data]="data['share_iv']" [name]="'investment products'">
+      </app-share-of-wallet-chart>
+
+    </div>
+  </div>
+</div>

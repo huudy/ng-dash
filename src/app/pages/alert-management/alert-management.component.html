@@ -1,0 +1,301 @@
+<div class="card border-0 shadow">
+  <div class="card-body">
+    <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#alerts')"></i>
+    <h2 class="sub_header">MY ALERTS</h2>
+    <p>Create alerts and check their status.</p>
+    <div *ngIf="pushPermissionDenied" class="alert alert-warning border-0 shadow-sm hide">You have disabled
+      notifications and will not
+      receive automatic updates when an alert is triggered.<br>If you would like to opt-in to notifications click on
+      the <i class="fas fa-info-circle"></i> icon on the left of your browser's address bar, unblock notifications and
+      then reload SONAR.</div>
+
+    <!-- <h5>Alert overview</h5>
+    <p>Check the status of your alerts here.</p>-->
+    </div>
+</div>
+
+<!-- <div class="card border-0 shadow mt-3">
+  <div class="card-body"> -->
+    <!-- <div class="container p-0 ml-0" id="alertContainer"> -->
+      <!-- ALERTS GO HERE -->
+      <!-- <div class="font-italic text-center text-muted">no alerts configured</div> -->
+      <div *ngIf="dataRetrieved" class="row">
+        <div *ngFor="let alert of alertData" class="col-md-12 col-lg-6 pb-3">
+          <app-custom-alert-card [alert]="alert" (modifyEvent)="modifyAlert($event)" (deleteEvent)="deleteAlert($event)"></app-custom-alert-card>
+        </div>
+      </div>
+    <!-- </div> -->
+  <!-- </div>
+</div> -->
+
+<div class="card border-0 shadow mt-3">
+  <div class="card-body">
+
+    <h5>Configure alert</h5>
+    <p>Status for newly configured alerts is available one day after they have been created.</p>
+
+    <div class="form-group">
+      <label for="alertTypeSelect">Select alert type</label>
+      <select class="form-control" id="alertTypeSelect" (change)="changeAlert()">
+        <option value="alertStatus">trade status</option>
+        <!-- <option value="alertPresentValue">trade present value</option> -->
+        <option value="alertTrade">client trades product</option>
+        <option value="alertSightDeposit">sight deposit balance</option>
+        <option value="alertEarnings">earnings</option>
+        <option value="alertMaturity">maturity</option>
+        <option value="alertActivityLevel">activity level</option>
+        <option value="alertPrediction">trade prediction</option>
+      </select>
+    </div>
+
+    <!-- ALL ALERT CONFIGURATORS HERE -->
+    <div class="card border-0 card-alert-config collapse show" id="alertStatus" alertType="status">
+      <div class="">
+        <div class="alert alert-info border-0 shadow-sm">Creates an alert that is triggered whenever the status of the
+          given trade changes.
+        </div>
+        <form action="">
+          <div class="form-group">
+            <label for="alertStatusName">Alert name</label>
+            <input type="text" class="form-control" id="alertStatusName" placeholder="trade status alert">
+          </div>
+          <div class="form-group">
+            <label for="alertStatusReference">Trade id</label>
+            <input type="text" class="form-control" id="alertStatusReference" placeholder="">
+          </div>
+          <div class="btn btn-primary cursor-pointer" (click)="addAlert($event)">create alert</div>
+        </form>
+      </div>
+    </div>
+
+    <div class="card border-0 card-alert-config collapse" id="alertPresentValue" alertType="presentvalue">
+      <div class="">
+        <div class="alert alert-info border-0 shadow-sm">Creates an alert that is triggered when the present value of a
+          trade is smaller / larger than the given threshold value.
+        </div>
+        <form action="">
+          <div class="form-group">
+            <label for="alertPresentValueName">Alert name</label>
+            <input type="text" class="form-control" id="alertPresentValueName" placeholder="trade present value alert">
+          </div>
+          <div class="form-group">
+            <label for="alertPresentValueReference">Trade id</label>
+            <input type="text" class="form-control" id="alertPresentValueReference" placeholder="">
+          </div>
+          <div class="row">
+            <div class="col-4 form-group">
+              <label for="alertPresentValueConditionOperator1">Comparison operator</label>
+              <select class="form-control" id="alertPresentValueConditionOperator1">
+                <option value="BELOW">larger than</option>
+                <option value="ABOVE">smaller than</option>
+              </select>
+            </div>
+            <div class="col form-group">
+              <label for="alertPresentValueConditionValue1">Threshold</label>
+              <input type="number" class="form-control" id="alertPresentValueConditionValue1" placeholder="">
+            </div>
+          </div>
+          <div class="btn btn-primary cursor-pointer" (click)="addAlert($event)">create alert</div>
+        </form>
+      </div>
+    </div>
+
+    <div class="card border-0 card-alert-config collapse" id="alertTrade" alertType="trade">
+      <div class="">
+        <div class="alert alert-info border-0 shadow-sm">Creates an alert that is triggered whenever the client trades
+          the specified product.</div>
+        <form action="">
+          <div class="form-group">
+            <label for="alertTradeName">Alert name</label>
+            <input type="text" class="form-control" id="alertTradeName" placeholder="trading alert">
+          </div>
+          <div class="row">
+            <div class="col form-group">
+              <label for="alertTradeReference">Client id</label>
+              <input type="text" class="form-control" id="alertTradeReference" placeholder="must be NDG">
+            </div>
+            <div id="alertTradeConditionOperator1" value="PRODUCT"></div>
+            <div class="col form-group">
+              <label for="alertTradeConditionValue1">Product type</label>
+              <select class="form-control" id="alertTradeConditionValue1">
+                <option value="FX FORWARDS">FX Forwards</option>
+                <option value="MONEY MARKET">Money Market Loan / Deposit</option>
+                <option value="FX SWAPS">FX Swaps</option>
+                <option value="FX SPOT">FX Spot</option>
+                <option value="FX OPTIONS">FX Options</option>
+                <option value="DEPOSITS">Deposits</option>
+                <option value="SECURITIES">Securities</option>
+                <option value="CEE BONDS">CEE Bonds</option>
+                <option value="IRS">Interest Rate Swap</option>
+                <option value="COMMODITIES">Commodities</option>
+                <option value="FOREIGN PAYMENT TRANSACTIONS">Foreign Payment Transactions</option>
+                <option value="FIXED INCOME OPTIONS">Fixed Income Options</option>
+              </select>
+            </div>
+            <div id="alertTradeConditionOperator2" value="CURRENCY"></div>
+            <div class="col form-group">
+              <label for="alertTradeConditionValue2">Currency</label>
+              <input type="text" class="form-control" id="alertTradeConditionValue2" placeholder="EUR">
+            </div>
+          </div>
+          <div class="btn btn-primary cursor-pointer" (click)="addAlert($event)">create alert</div>
+        </form>
+      </div>
+    </div>
+
+    <div class="card border-0 card-alert-config collapse" id="alertSightDeposit" alertType="accountbalance">
+      <div class="">
+        <div class="alert alert-info border-0 shadow-sm">Creates an alert that is triggered when the balance on a
+          specified account is smaller / larger than the given threshold value.
+        </div>
+        <form action="">
+          <div class="form-group">
+            <label for="alertSightDepositName">Alert name</label>
+            <input type="text" class="form-control" id="alertSightDepositName" placeholder="account balance alert">
+          </div>
+          <div class="row">
+            <div class="col form-group">
+              <label for="alertSightDepositReference">Client id</label>
+              <input type="text" class="form-control" id="alertSightDepositReference" placeholder="must be NDG">
+            </div>
+            <div id="alertSightDepositConditionOperator1" value="CURRENCY"></div>
+            <div class="col form-group">
+              <label for="alertSightDepositConditionValue1">Account currency</label>
+              <input type="text" class="form-control" id="alertSightDepositConditionValue1" placeholder="EUR">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 form-group">
+              <label for="alertSightDepositConditionOperator2">Comparison operator</label>
+              <select class="form-control" id="alertSightDepositConditionOperator2">
+                <option value="ABOVE">larger than</option>
+                <option value="BELOW">smaller than</option>
+              </select>
+            </div>
+            <div class="col form-group">
+              <label for="alertSightDepositConditionValue2">Threshold</label>
+              <input type="number" class="form-control" id="alertSightDepositConditionValue2"
+                placeholder="in account currency">
+            </div>
+          </div>
+          <div class="btn btn-primary cursor-pointer" (click)="addAlert($event)">create alert</div>
+        </form>
+      </div>
+    </div>
+
+    <div class="card border-0 card-alert-config collapse" id="alertEarnings" alertType="earnings">
+      <div class="">
+        <div class="alert alert-info border-0 shadow-sm">Creates an alert that is triggered when the earnings with the
+          given client fall below / above a threshold value in a given period.
+        </div>
+        <form action="">
+          <div class="form-group">
+            <label for="alertEarningsName">Alert name</label>
+            <input type="text" class="form-control" id="alertEarningsName" placeholder="earnings alert">
+          </div>
+          <div class="form-group">
+            <label for="alertEarningsReference">Client id</label>
+            <input type="text" class="form-control" id="alertEarningsReference" placeholder="must be NDG">
+          </div>
+          <div class="row">
+            <div class="col-4 form-group">
+              <label for="alertEarningsConditionOperator1">Comparison operator</label>
+              <select class="form-control" id="alertEarningsConditionOperator1">
+                <option value="ABOVE">larger than</option>
+                <option value="BELOW">smaller than</option>
+              </select>
+            </div>
+            <div class="col form-group">
+              <label for="alertEarningsConditionValue1">Threshold</label>
+              <input type="number" class="form-control" id="alertEarningsConditionValue1" placeholder="in EUR">
+            </div>
+            <div id="alertMaturityConditionOperator2" placeholder="MONTHS"></div>
+            <div class="col form-group">
+              <label for="alertEarningsConditionValue2">Period</label>
+              <input type="number" class="form-control" id="alertEarningsConditionValue2" placeholder="in months">
+            </div>
+          </div>
+          <div class="btn btn-primary cursor-pointer" (click)="addAlert($event)">create alert</div>
+        </form>
+      </div>
+    </div>
+
+    <div class="card border-0 card-alert-config collapse" id="alertMaturity" alertType="maturity">
+      <div class="">
+        <div class="alert alert-info border-0 shadow-sm">Creates an alert that is triggered when the given client has
+          any trade maturing within the specified timeframe.
+        </div>
+        <form action="">
+          <div class="form-group">
+            <label for="alertMaturityName">Alert name</label>
+            <input type="text" class="form-control" id="alertMaturityName" placeholder="maturity alert">
+          </div>
+          <div class="form-group">
+            <label for="alertMaturityReference">Client id</label>
+            <input type="text" class="form-control" id="alertMaturityReference" placeholder="must be NDG">
+          </div>
+          <div id="alertMaturityConditionOperator1" value="DAYS"></div>
+          <div class="form-group">
+            <label for="alertMaturityConditionValue1">Timeframe</label>
+            <input type="number" class="form-control" id="alertMaturityConditionValue1" placeholder="in days">
+          </div>
+          <div class="btn btn-primary cursor-pointer" (click)="addAlert($event)">create alert</div>
+        </form>
+      </div>
+    </div>
+
+    <div class="card border-0 card-alert-config collapse" id="alertActivityLevel" alertType="activitylevel">
+      <div class="">
+        <div class="alert alert-info border-0 shadow-sm">Creates an alert that is triggered when the specified client's
+          activity level falls below the given threshold value.
+        </div>
+        <form action="">
+          <div class="form-group">
+            <label for="alertActivityLevelName">Alert name</label>
+            <input type="text" class="form-control" id="alertActivityLevelName" placeholder="activity level alert">
+          </div>
+          <div class="form-group">
+            <label for="alertActivityLevelReference">Client id</label>
+            <input type="text" class="form-control" id="alertActivityLevelReference" placeholder="must be NDG">
+          </div>
+          <div class="row">
+            <div id="alertActivityLevelConditionOperator1" value="BELOW">
+            </div>
+            <div class="col form-group">
+              <label for="alertActivityLevelConditionValue1">Threshold</label>
+              <input type="number" class="form-control" id="alertActivityLevelConditionValue1"
+                placeholder="number between 0-9">
+            </div>
+          </div>
+          <div class="btn btn-primary cursor-pointer" (click)="addAlert($event)">create alert</div>
+        </form>
+      </div>
+    </div>
+
+    <div class="card border-0 card-alert-config collapse" id="alertPrediction" alertType="prediction">
+      <div class="">
+        <div class="alert alert-info border-0 shadow-sm">Creates an alert that is triggered when the given client is
+          predicted to make a trade within the next seven days.
+        </div>
+        <form action="">
+          <div class="form-group">
+            <label for="alertPredictionName">Alert name</label>
+            <input type="text" class="form-control" id="alertPredictionName" placeholder="trade prediction alert">
+          </div>
+          <div class="form-group">
+            <label for="alertPredictionReference">Client id</label>
+            <input type="text" class="form-control" id="alertPredictionReference" placeholder="must be NDG">
+          </div>
+          <div id="alertPredictionConditionOperator1" value="ABOVE"></div>
+          <div class="form-group">
+            <label for="alertPredictionConditionValue1">Threshold probability</label>
+            <input type="number" class="form-control" id="alertPredictionConditionValue1" placeholder="in %">
+          </div>
+          <div class="btn btn-primary cursor-pointer" (click)="addAlert($event)">create alert</div>
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+</div>

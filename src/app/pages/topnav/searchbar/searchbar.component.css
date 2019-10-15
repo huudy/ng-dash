@@ -1,0 +1,86 @@
+#searchbar {
+    width: 350px;
+}
+
+@media only screen and (max-width: 950px) {
+    #searchbar {
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #searchbar {
+        display: none;
+    }
+
+    #searchbar-button {
+        display: none;
+    }
+
+    :host ::ng-deep .algolia-autocomplete .aa-hint {
+        display: none;
+    }
+}
+
+/* autocomplete styling */
+:host ::ng-deep .algolia-autocomplete .aa-input, .aa-hint {
+    width: 100%;
+    border-radius: 0.125rem 0 0 0.125rem;
+}
+:host ::ng-deep .algolia-autocomplete .aa-hint {
+    color: #999;
+}
+:host ::ng-deep .algolia-autocomplete .aa-dropdown-menu {
+    width: 100%;
+    background-color: #fff;
+    color: #333;
+    /*border: 1px solid #000;
+    */
+ border-top: none;
+    font-size: 0.9em;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
+    border-radius: 0.125rem;
+    /*margin-top: 0.25rem;
+    */
+ margin-top: -0.5rem;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: var(--danger);
+}
+:host ::ng-deep .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+    cursor: pointer;
+    padding: 3px 10px;
+    transition: 0.1s;
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+:host ::ng-deep .algolia-autocomplete p {
+    margin: 0;
+}
+:host ::ng-deep .algolia-autocomplete h4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 1em;
+    letter-spacing: 0.1rem;
+    padding: 10px 10px 5px 10px;
+    margin: 0;
+    color: var(--dark);
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    text-transform: uppercase;
+    background-color: var(--light);
+}
+:host ::ng-deep .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+    background-color: var(--light);
+    border-left: 3px solid var(--warning);
+}
+:host ::ng-deep .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor:last-child {
+    border-radius: 0 0 0.125rem 0.125rem;
+}
+:host ::ng-deep .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+    font-weight: bold;
+    font-style: normal;
+}
+:host ::ng-deep .algolia-autocomplete .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 100%;
+}

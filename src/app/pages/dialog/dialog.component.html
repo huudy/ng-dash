@@ -1,0 +1,21 @@
+<div class="modal fade" id="dialog" tabindex="-1" role="dialog" aria-labelledby="dialogLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content border-0">
+      <div class="modal-header border-bottom-0">
+        <h5 class="modal-title" id="dialogLabel">Your messages</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div [innerHTML]="body" class="px-3" id="dialogBody"></div>
+
+      <div class="modal-footer border-top-0 pt-1">
+        <button type="button" class="btn btn-light border-0 shadow-sm" data-dismiss="modal" (click)="closeMessage()">dismiss all messages</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-userguide *ngIf="enableUserguide"></app-userguide>

@@ -1,0 +1,53 @@
+<div class="card border-0 shadow mb-3">
+  <div class="card-body">
+    <h2>CTS MANAGEMENT DASHBOARD</h2>
+    <p>Overview on all activity in the CTS and CSG regions and teams.</p>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="regionSelect"><i class="fas fa-map-marked"></i></label>
+      </div>
+      <select class="custom-select" #s (change)="changeRegion(s.value)">
+        <!-- <option selected disabled>Choose region...</option> -->
+        <option selected value="CTSGER">Total</option>
+        <option value="CTSGBAY">Bayern</option>
+        <option value="CTSGNWS">Nord-West</option>
+        <option value="CTSGOS">Ost</option>
+        <option value="CTSGSW">Süd-West</option>
+        <option value="CTSGFX">FX Product Specialists</option>
+        <option value="CTSGIR">IRD Product Specialists</option>
+        <option value="CTSGCSG">Corporate Solution Group</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<app-region-kpis *ngIf="dataRetrieved" [data]="kpiData"></app-region-kpis>
+<app-region-comparison *ngIf="dataRetrieved" [data]="regionComparisonData"></app-region-comparison>
+
+<div class="row" id="ctsMgmtDashboardContent">
+  <div class="col-xxl-6 mb-3">
+    <app-recent-upcoming *ngIf="dataRetrieved" [dataNewLoans]="detailsNewLoansData"
+      [dataMaturingLoans]="detailsMaturingLoansData" [dataEcommerceTrades]="detailsEcommTradesData"
+      [dataMaturities]="detailsMaturitiesData"></app-recent-upcoming>
+  </div>
+
+  <div class="col-xxl-6 mb-3">
+    <app-trending-products *ngIf="dataRetrieved" [data]="trendingProductsData"></app-trending-products>
+  </div>
+
+  <div class="col-xxl-6 mb-3">
+    <app-earnings-by-sector *ngIf="dataRetrieved" [data]="sectorEarningsData"></app-earnings-by-sector>
+  </div>
+
+  <div class="col-xxl-6 mb-3">
+    <app-earnings-topology-chart *ngIf="dataRetrieved" [data]="earningsTopologyData"></app-earnings-topology-chart>
+  </div>
+
+  <div class="col-xxl-6 mb-3">
+    <app-traded-currencies-chart *ngIf="dataRetrieved" [data]="currencyVolumesData"></app-traded-currencies-chart>
+  </div>
+
+  <div class="col-xxl-6 mb-3">
+    <app-business-development-chart *ngIf="dataRetrieved" [data]="earnignsAssetClassData"></app-business-development-chart>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="card border-0 shadow">
+  <div class="card-body">
+    <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#maturing-quotes')"></i>
+    <h2 class="sub_header">FOLLOW-UP ON LOST REQUEST FOR QUOTE</h2>
+
+    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+      <label class="btn btn-light btn-sm shadow-sm cursor-pointer active" (click)="updateTimeframe(7)">
+        <input type="radio" checked> 1 week
+      </label>
+      <label class="btn btn-light btn-sm shadow-sm cursor-pointer" (click)="updateTimeframe(20)">
+        <input type="radio"> 4 weeks
+      </label>
+      <label class="btn btn-light btn-sm shadow-sm cursor-pointer" (click)="updateTimeframe(60)">
+        <input type="radio"> 12 weeks
+      </label>
+    </div>
+
+    <p>The following FX forward and swap trades were inquired by our clients in the past but did not end up being executed with us (exactly as requested or via a similar instrument). They are now near maturity which may be a good opportunity to contact the
+      client on any follow-up trades.</p>
+
+    <app-maturing-quotes-table *ngIf="dataRetrieved" [data]="maturingQuotesData" [search]="search"></app-maturing-quotes-table>
+
+  </div>
+</div>

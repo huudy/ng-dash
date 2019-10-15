@@ -1,0 +1,59 @@
+<div class="card border-0 h-100 shadow">
+  <div class="card-body">
+    <div class="font-weight-bold text-muted mb-2">Sector analysis</div>
+    <p>Compares the hedging behaviour in the client's peer group.</p>
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="sectorMixTab" href="#sectorMixPanel" data-toggle="tab" aria-selected="true"
+          role="tab">peer group composition</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="currencyMixTab" href="#currencyMixPanel" data-toggle="tab" aria-selected="false"
+          role="tab">currency mix</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="tenorTab" href="#tenorPanel" data-toggle="tab" aria-selected="false"
+          role="tab">tenor</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="hedgingBinsTab" href="#hedgingBinsPanel" data-toggle="tab" aria-selected="false"
+          role="tab">hedging time buckets</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane fade show active pt-3" id="sectorMixPanel" aria-labelledby="sectorMixTab" role="tabpanel">
+        <p class="small">Composition of the client's peer group.</p>
+        <div class="w-100" style="height: 275px;">
+          <canvas id="sectorMixChart"></canvas>
+        </div>
+      </div>
+      <div class="tab-pane fade pt-3" id="currencyMixPanel" aria-labelledby="currencyMixTab" role="tabpanel">
+        <p class="small">Most traded currencies (by volume, irrespective of direction) within the client's peer group.</p>
+        <div class="w-100" style="height: 275px;">
+          <canvas id="currencyMixChart"></canvas>
+        </div>
+      </div>
+      <div class="tab-pane fade pt-3" id="tenorPanel" aria-labelledby="currencyMixTab" role="tabpanel">
+        <p class="small">Volume weighted tenor of hedging instruments (duration > 90 days).</p>
+        <div class="w-100" style="height: 275px;">
+          <canvas id="tenorChart"></canvas>
+        </div>
+      </div>
+      <div class="tab-pane fade pt-3" id="hedgingBinsPanel" aria-labelledby="hedgingBinsTab" role="tabpanel">
+        <p class="small">Fraction of traded volume by hedging time bucket.</p>
+        <div class="row">
+          <div class="col-lg-12 col-xl-6">
+            <div class="w-100" style="height: 275px;">
+              <canvas id="hedgingBinsBuyChart"></canvas>
+            </div>
+          </div>
+          <div class="col-lg-12 col-xl-6">
+            <div class="w-100" style="height: 275px;">
+              <canvas id="hedgingBinsSellChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

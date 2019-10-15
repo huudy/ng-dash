@@ -1,0 +1,85 @@
+<div class="card border-0 shadow mb-3">
+    <div class="card-body">
+        <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#ecommerce')"></i>
+        <h2 class="sub_header">ECOMMERCE ACTIVITY</h2>
+
+        <p>Your clients' activity on our supported ecommerce platforms.</p>
+
+        <h5>Development of key performance indicators</h5>
+
+        <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+            <label class="btn btn-light btn-sm shadow-sm cursor-pointer active" (click)="updateTimeframeCharts('ytd')">
+        <input type="radio" checked> last 12 months
+      </label>
+            <label class="btn btn-light btn-sm shadow-sm cursor-pointer" (click)="updateTimeframeCharts('last')">
+        <input type="radio"> last year
+      </label>
+        </div>
+
+        <p>Months with no activity are omitted here.</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 col-xl-6 col-xxl-4">
+        <app-ecommerce-performance-chart [data]="ecommerceEarningsGraphData" [id]="'fxEcommerceOverviewEarnignsAndTransactionsGraph'" [dataLabelConfig]="earningsTransactionsChartConfig">
+        </app-ecommerce-performance-chart>
+    </div>
+    <div class="col-md-12 col-xl-6 col-xxl-4">
+        <app-ecommerce-performance-chart [data]="ecommerceEarningsGraphData" [id]="'fxEcommerceOverviewClientsAndNewClientsGraph'" [dataLabelConfig]="clientsChartConfig">
+        </app-ecommerce-performance-chart>
+    </div>
+    <div class="col-md-12 col-xl-6 col-xxl-4">
+        <app-ecommerce-performance-chart [data]="ecommerceEarningsGraphData" [id]="'fxEcommerceOverviewVolumeAndRequestedVolumeGraph'" [dataLabelConfig]="volumeChartConfig">
+        </app-ecommerce-performance-chart>
+    </div>
+</div>
+
+
+<div class="card border-0 shadow mb-3">
+    <div class="card-body">
+        <h5>Client details</h5>
+
+        <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+            <label class="btn btn-light btn-sm shadow-sm cursor-pointer active" (click)="updateTimeframeDetails('month')">
+        <input type="radio" checked> 1 month
+      </label>
+            <label class="btn btn-light btn-sm shadow-sm cursor-pointer" (click)="updateTimeframeDetails('ytd')">
+        <input type="radio"> year to date
+      </label>
+            <label class="btn btn-light btn-sm shadow-sm cursor-pointer" (click)="updateTimeframeDetails('last')">
+        <input type="radio"> last year
+      </label>
+        </div>
+
+        <p>Summary of ecommerce activity per client for the selected timeframe.</p>
+
+        <app-ecommerce-earnings-table *ngIf="dataRetrieved" [data]="ecommerceEarningsData" [search]="search">
+        </app-ecommerce-earnings-table>
+
+    </div>
+</div>
+
+<div class="card border-0 shadow">
+    <div class="card-body">
+        <h5>Trade details</h5>
+
+        <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+            <label class="btn btn-light btn-sm shadow-sm cursor-pointer active" (click)="updateTimeframeRecent(7)">
+        <input type="radio" checked> 1 week
+      </label>
+            <label class="btn btn-light btn-sm shadow-sm cursor-pointer" (click)="updateTimeframeRecent(30)">
+        <input type="radio"> 4 weeks
+      </label>
+            <label class="btn btn-light btn-sm shadow-sm cursor-pointer" (click)="updateTimeframeRecent(90)">
+        <input type="radio"> 12 weeks
+      </label>
+        </div>
+
+        <p>Rundown of individual transaction on our supported ecommerce platforms in the selected timeframe.</p>
+
+        <app-ecommerce-recent-trades-table *ngIf="dataRetrieved" [data]="recentTradesData" [search]="search">
+        </app-ecommerce-recent-trades-table>
+
+    </div>
+</div>

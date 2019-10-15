@@ -1,0 +1,96 @@
+<ng-template [ngIf]="dataRetrieved" [ngIfElse]="notfound">
+  <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#client-view')"></i>
+  <h2>{{clientName}}</h2>
+
+  <app-dia-link *ngIf="dataRetrieved" [data]="staticData"></app-dia-link>
+
+  <div class="my-2"></div>
+
+  <app-static-information *ngIf="dataRetrieved" [data]="staticData"></app-static-information>
+
+  <div class="row">
+    <div class="col-md-6 col-lg-3">
+      <app-activity-level-client *ngIf="dataRetrieved" [staticData]="staticData" [recentTransactionsData]="recentTransactionsData"></app-activity-level-client>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <app-pre-settlement-risk-client *ngIf="dataRetrieved" [data]="preSettlementRiskData">
+      </app-pre-settlement-risk-client>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <app-asset-class-coverage-client *ngIf="dataRetrieved" [data]="staticData"></app-asset-class-coverage-client>
+    </div>
+    <div class="col-md-6 col-lg-3">
+      <app-next-trade *ngIf="dataRetrieved" [data]="staticData"></app-next-trade>
+    </div>
+    <div class="col-md-12 col-lg-6">
+      <app-activity-pattern *ngIf="dataRetrieved" [data]="activityData"></app-activity-pattern>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="dataRetrieved">
+    <div *ngFor="let item of importantItems" class="col-12 col-md-6 col-lg-4 col-xl-3 mx-auto">
+      <app-important-item [title]="item.title" [text]="item.text" [routerLinkTarget]="item.link" [routerParameters]="item.parameters"></app-important-item>
+    </div>
+  </div>
+
+  <app-earnings *ngIf="dataRetrieved" [data]="earnings"></app-earnings>
+
+  <h3 class="text-center my-3">Portfolio Analysis</h3>
+
+  <app-active-trades *ngIf="dataRetrieved" [data]="activeTradesData"></app-active-trades>
+
+  <div class="row">
+    <div class="col-12">
+      <app-forex-exposure *ngIf="dataRetrieved" [data]="forexExposureData"></app-forex-exposure>
+    </div>
+
+    <div class="col-lg-6">
+      <app-markup-statistics *ngIf="dataRetrieved" [data]="markupData"></app-markup-statistics>
+    </div>
+
+    <div class="col-lg-6">
+      <app-current-accounts *ngIf="dataRetrieved" [data]="currentAccountsData"></app-current-accounts>
+    </div>
+
+    <div class="col-xl-6">
+      <app-loans *ngIf="dataRetrieved" [data]="loansData"></app-loans>
+    </div>
+
+    <div class="col-xxl-6">
+      <app-commodity-exposure *ngIf="dataRetrieved" [data]="commodityExposureData"></app-commodity-exposure>
+    </div>
+
+    <div class="col-lg-6">
+      <app-trading-channel *ngIf="dataRetrieved" [data]="tradingChannelData"></app-trading-channel>
+    </div>
+  </div>
+
+  <h3 class="text-center my-3">Cross- and upselling opportunities</h3>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <app-suggested-actions *ngIf="dataRetrieved" [data]="suggestionsData"></app-suggested-actions>
+    </div>
+
+    <div class="col-lg-6">
+      <app-popular-products *ngIf="dataRetrieved" [data]="popularProductsData"></app-popular-products>
+    </div>
+
+    <div class="col-lg-6">
+      <app-potential-foreign-exchange-exposure *ngIf="dataRetrieved" [data]="potentialForeignExchangeExposureData">
+      </app-potential-foreign-exchange-exposure>
+    </div>
+    <div class="col-lg-6">
+      <app-sector-analysis *ngIf="dataRetrieved" [dataComposition]="sectorAnalysisCompositionData" [dataCurrencyMix]="sectorAnalysisCurrencyMixData" [dataTenor]="sectorAnalysisTenorData" [dataHedgingBins]="sectorAnalysisHedgingBinsData"></app-sector-analysis>
+    </div>
+    <div class="col-lg-6">
+      <app-share-of-wallet *ngIf="dataRetrieved" [data]="shareOfWalletData"></app-share-of-wallet>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #notfound>
+  <div class="alert alert-danger border-0 shadow">
+    Unable to open this client. You may have to switch to <em>Team View</em> or higher to view this client.
+  </div>
+</ng-template>

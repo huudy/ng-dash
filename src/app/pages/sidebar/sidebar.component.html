@@ -1,0 +1,25 @@
+<!--<ul id='sidebarBase'>
+  <li *ngFor="let widget of widgets" [ngClass]="getRoute(widget.widgetName)" class="sidebar-widget border-bottom border-secondary d-flex" (click)="toggleSidebar($event)" data-toggle="tooltip" data-placement="right" title="{{widget.description}}">
+      <i class="{{widget.icon}} m-auto"></i>
+  </li>
+</ul>
+<ul id="sidebarSlider">
+  <div *ngFor="let section of sections" class="collapse no-transition sidebar-slider-section">
+    <li *ngFor="let item of section.items" class="sidebar-slider-item" routerLink="{{item.routerLink}}" routerLinkActive #dashboard="routerLinkActive">{{item.name}}</li>
+  </div>
+</ul>-->
+<ul id="sidebar">
+  <li class="">
+    <div class="widget-icon d-flex cursor-pointer" (click)="sidebarOpenClose()" data-toggle="tooltip" data-placement="right" title="open / close sidebar">
+      <i class="fas fa-bars m-auto"></i>
+    </div>
+  </li>
+  <li #sidebarWidgets *ngFor="let widget of widgets" class="" routerLinkActive="active selected">
+    <div class="widget-icon d-flex cursor-pointer" (click)="toggleSidebar($event)" data-toggle="tooltip" data-placement="right" title="{{widget.description}}">
+      <i class="{{widget.icon}} m-auto"></i>
+    </div>
+    <ul class="sidebar-slider">
+      <li *ngFor="let item of widget.items" (click)="sidebarOpenClose()" routerLink="{{item.routerLink}}" routerLinkActive="text-dark">{{item.name}}</li>
+    </ul>
+  </li>
+</ul>

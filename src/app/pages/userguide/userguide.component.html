@@ -1,0 +1,452 @@
+<div class="modal fade" id="userGuideModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content" style="height: 90vh;">
+      <div class="modal-header">
+        <h5 class="modal-title">User guide</h5>
+        <button id="dashboard_user_guide_button" type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      </div>
+      <div class="modal-body" style="overflow-y: auto;">
+        <p><img alt="Logo" src="./assets/img/user_guide/UC logo.png"></p>
+        <h1 id="sonar-user-guide">SONAR User Guide</h1>
+        <hr>
+
+        <ol>
+          <li><a [routerLink]="" (click)='jumpToAnchor("#sonar-user-guide")'>SONAR User Guide</a> </li>
+          <li><a [routerLink]="" (click)='jumpToAnchor("#purpose-of-the-tool")'>PURPOSE OF THE TOOL</a> </li>
+          <li><a [routerLink]="" (click)='jumpToAnchor("#generPal-frontend")'>GENERAL FRONTEND</a> </li>
+          <li><a [routerLink]="" (click)='jumpToAnchor("#dashboards-and-statistics")'>DASHBOARDS AND STATISTICS</a><br>4.1. <a [routerLink]="" (click)='jumpToAnchor("#dashboard")'>Dashboard</a><br>4.2. <a [routerLink]="" (click)='jumpToAnchor("#portfolio")'>Portfolio</a><br>4.3.
+            <a [routerLink]="" (click)='jumpToAnchor("#market-data")'>Market Data</a> </li>
+          <li><a [routerLink]="" (click)='jumpToAnchor("#client-activity")'>CLIENT ACTIVITY</a><br>5.1. <a [routerLink]="" (click)='jumpToAnchor("#activity-levels")'>Activity
+            levels</a><br>5.2. <a [routerLink]="" (click)='jumpToAnchor("#current-accounts")'>Current Accounts</a><br>5.3. <a [routerLink]="" (click)='jumpToAnchor("#ecommerce")'>Ecommerce</a><br>5.4. <a [routerLink]="" (click)='jumpToAnchor("#letters-of-credit")'>Letters Of Credit</a><br>5.5.
+            <a [routerLink]="" (click)='jumpToAnchor("#loans")'>Loans</a><br>5.6. <a [routerLink]="" (click)='jumpToAnchor("#pre-settlement-risk")'>Pre-Settlement Risk</a><br>5.7. <a [routerLink]="" (click)='jumpToAnchor("#unusual-trades")'>Unusual Trades</a>            </li>
+          <li><a [routerLink]="" (click)='jumpToAnchor("#opportunities")'>OPPORTUNITIES</a><br>6.1. <a [routerLink]="" (click)='jumpToAnchor("#client-growth")'>Client Growth</a><br>6.1.1. <a [routerLink]="" (click)='jumpToAnchor("#target-clients")'>Target Clients</a><br>6.1.2.
+            <a [routerLink]="" (click)='jumpToAnchor("#date-of-last-trade")'>Date of last trade</a><br>6.2.
+            <a [routerLink]="" (click)='jumpToAnchor("#foreign-exchange-monitoring")'>Foreign Exchange Monitoring</a><br>6.3. <a [routerLink]="" (click)='jumpToAnchor("#maturing-quotes")'>Maturing Quotes</a><br>6.4. <a [routerLink]="" (click)='jumpToAnchor("#hedging-opportunities")'>Hedging
+            Opportunities</a><br>6.5. <a [routerLink]="" (click)='jumpToAnchor("#maturities")'>Maturities</a><br>6.6.
+            <a [routerLink]="" (click)='jumpToAnchor("#trading-forecast")'>Trading Forecast</a> </li>
+          <li><a [routerLink]="" (click)='jumpToAnchor("#exposures-and-aggregated-data")'>EXPOSURES AND AGGREGATED DATA</a><br>7.1. <a [routerLink]="" (click)='jumpToAnchor("#commodity-exposure")'>Commodity Exposure</a><br>7.2. <a [routerLink]="" (click)='jumpToAnchor("#foreign-exchange-exposure")'>Foreign
+            Exchange Exposure</a><br>7.3. <a [routerLink]="" (click)='jumpToAnchor("#product-purchase-history")'>Product Purchase History</a><br>7.4.
+            <a [routerLink]="" (click)='jumpToAnchor("#forex-markup")'>Forex Markup</a> </li>
+          <li><a [routerLink]="" (click)='jumpToAnchor("#alerts")'>ALERTS</a> </li>
+          <li><a [routerLink]="" (click)='jumpToAnchor("#deputy-management")'>DEPUTY MANAGEMENT</a> </li>
+          <li><a [routerLink]="" (click)='jumpToAnchor("#client-view")'>CLIENT VIEW</a><br>10.1. <a [routerLink]="" (click)='jumpToAnchor("#general-information")'>General
+            Information</a><br>10.2. <a [routerLink]="" (click)='jumpToAnchor("#portfolio-analysis")'>Portfolio Analysis</a><br>10.3. <a [routerLink]="" (click)='jumpToAnchor("#cross-and-upselling-opportunities")'>Cross- and Upselling Opportunities</a>            </li>
+          <li><a [routerLink]="" (click)='jumpToAnchor("#contacts")'>CONTACTS</a> </li>
+        </ol>
+
+        <h1 id="purpose-of-the-tool">PURPOSE OF THE TOOL</h1>
+        <p><strong>SONAR</strong> (Sales Opportunities and Transactions for Markets) is a <strong>cross asset</strong> tool, covering FX and FX derivatives, Interest Rate derivatives, Commodity derivatives, Equity derivatives and Investment products (all
+          asset classes; including deposits) that provides sales people in <strong>CTS</strong> a personalized insight to and smart use of <strong>Markets' data</strong>. The purpose is to have a <strong>data-driven
+          detection</strong> and
+          <strong>visualization</strong> of sales opportunities, along with customization and optimization of
+          <strong>risk</strong>, <strong>efficiency</strong> and <strong>product offering</strong>.</p>
+        <hr>
+        <h1 id="general-frontend">GENERAL FRONTEND</h1>
+        <p>The general frontend of SONAR starts with an overview of the <a [routerLink]="" (click)='jumpToAnchor("#dashboard")'>Dashboard</a>. It is possible to get a holistic view of the whole Sales team <strong>portfolio of clients</strong> by clicking
+          on the "<strong>Team View</strong>" button from the drop-down menu on the top, as well as other available geographical subdivisions.</p>
+        <p><img alt="Summary_of_activities" src="./assets/img/user_guide/generalfrontend.png"></p>
+        <blockquote>
+        </blockquote>
+        <p>To dive deep into a specific <strong>client</strong> it is enough to start typing the name, the NDG or the matchcode of the client in the <strong>search bar</strong> on the top-right corner and a drop-down menu will appear with the first matchings.
+          Click on the <strong>client name</strong> or on the search lens to be redirected to the <a [routerLink]="" (click)='jumpToAnchor("#client-view")'>Client View</a> section where you will find more details.</p>
+        <blockquote>
+        </blockquote>
+        <p><img alt="Client selection" src="./assets/img/user_guide/search.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>In the search bar not only is possible to search a <strong>client</strong> from the drop-down menu but also to look-up and to go to some specific <strong>subpages</strong> in SONAR (e.g. <strong>Market
+                Data</strong>). The search also contains links to specific sections in this user guide.</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <blockquote>
+        </blockquote>
+        <p>By clicking on the <strong>question mark</strong> button <img alt="Summary_of_activities" src="./assets/img/user_guide/userguideicon.png"> available throughout SONAR, the <strong>SONAR User
+          Guide</strong> will open up and provide further guidance.
+        </p>
+        <p><img alt="Summary_of_activities" src="./assets/img/user_guide/userguide.png"> The User Guide opens directly into the area related to the section where the "<strong>?</strong>" <strong>button</strong> was clicked. For further support please drop
+          an <strong>email</strong> to or call the <strong>number</strong> of one of the contacts in the <a [routerLink]="" (click)='jumpToAnchor("#contacts")'>Contacts</a> section .</p>
+        <p>In general, some <strong>common features</strong> are available for any table in SONAR. See the example below:
+        </p>
+        <blockquote>
+        </blockquote>
+        <p><img alt="Client selection" src="./assets/img/user_guide/table.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>On the top left, it is possible to choose the number of <strong>entries</strong> to be shown (e.g. 10-100) from a drop-down menu. This item is hidden in tables that have less than 10 entries.</li>
+              <li>By hovering over a table, the option of <strong>exporting</strong> the table to Excel or or generating a print friendly version.</li>
+              <li>Some tables also feature a switch that can toggle between data from different time frames to be displayed in the table.</li>
+              <li>The <strong>search bar</strong> can be used to filter the table. Multiple search terms can be added to the filter by separating them with a space, e.g. "Options USD". The terms may occur in any of the tables columns. If you want to filter
+                for keywords that contain a space use quotation marks ("") around your search term.</li>
+              <li>To <strong>sort</strong> a table click on the respective column's header.</li>
+              <li>Below the table you can find the pagination controls that display how many items are currently visible and allow to toggle between the different pages of the table. The toggle is hidden in tables that only have a single page.</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <hr>
+        <h1 id="dashboards-and-statistics">DASHBOARDS AND STATISTICS</h1>
+        <h2 id="dashboard">Dashboard</h2>
+        <p>The dashboard can be accessed by clicking the UniCredit / SONAR icon in the top navigation bar.</p>
+        <p><img alt="Summary_of_activities" src="./assets/img/user_guide/home.png"></p>
+        <p>The dashboard summarizes the most important information on your <strong>portfolio of clients</strong>. Each card on the dashboard represents a specific analysis that identified potential <strong>trading
+          opportunities</strong>. By clicking the "<strong>Show me</strong>" button you are redirected to the respective subpage in SONAR.</p>
+        <p><img alt="Summary_of_activities" src="./assets/img/user_guide/dashboard.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>By clicking the "<strong>show me</strong>" button you are led to the section from which the alert was generated and get more details.</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <h2 id="portfolio">Portfolio</h2>
+        <p>The Portfolio page shows key performance indicators on your client portfolio. Please note that this page only ever displays information on your clients, irrespective of any other settings in the application.</p>
+        <p><img alt="Summary_of_activities" src="./assets/img/user_guide/portfolio.png"></p>
+        <p>The top row is compromised of a set of key performance indicators, of which those with a <strong>+</strong> icon can be expanded to display more detailed information by clicking on them.</p>
+        <h2 id="market-data">Market Data</h2>
+        <p>This section contains research data retrieved from the <strong>internal UniCredit research</strong> website and it is split into two parts for <strong>Interest Rates</strong> and <strong>Exchange Rates</strong>.</p>
+        <blockquote>
+        </blockquote>
+        <p><img alt="Market_data" src="./assets/img/user_guide/research.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>The data is <strong>updated daily</strong> and shows the interest rates levels for the
+                <strong>EU</strong>, <strong>US</strong> and <strong>UK</strong>.</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <blockquote>
+        </blockquote>
+        <p><img alt="Exchange_rates" src="./assets/img/user_guide/exchangerates.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>The arrow under "<strong>Momentum</strong>" could be in <strong>Green</strong>, <strong>Grey</strong> or <strong>Red</strong> indicating the tendency of rising or falling <strong>exchange rates</strong> in the specified currency (UC Research
+                source).
+              </li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <hr>
+        <h1 id="client-activity">CLIENT ACTIVITY</h1>
+        <p>This section is concerned with <em>past</em> client behavior and triggers that can be constructed from your clients' <em>recent</em> actions and activities.</p>
+        <h2 id="activity-levels">Activity levels</h2>
+        <p>An algorithm assignes each client an activity level from <strong>0</strong> (low) to <strong>9</strong> (high) by comparing recent and past trading activity. The algorithm takes into account all transactions within the last <strong>3 years</strong>.
+          A client that appears in the list here has <strong>dropped</strong> in activity level as compared to its score one week ago.</p>
+        <p>The bars are coloured in <strong>red</strong>, <strong>yellow</strong> or <strong>green</strong> depending on the activity level range the client flass in. The <strong>stripped grey segment</strong> outlines the observed drop.
+        </p>
+        <p><img alt="Activity_levels" src="./assets/img/user_guide/activitylevels.png"></p>
+        <h2 id="current-accounts">Current Accounts</h2>
+        <p>This page contains an overview on the netted (sum) current account balances for all clients as well as table with those clients and accounts that have recently seen above average activity (balance changes on the acccount). This page can be used
+          to identify target clients for investment products (large positive balance), short and long term debt financing (large negative balance) and activity in currencies that might warrant hedging.</p>
+        <p><img alt="Accounts_overview" src="./assets/img/user_guide/currentaccounts.png"></p>
+        <h2 id="ecommerce">Ecommerce</h2>
+        <p>This section gives an overview on the activity of your clients on any of our supported <strong>ecommerce
+          platforms</strong>.</p>
+        <p><img alt="FX_Ecommerce" src="./assets/img/user_guide/ecommerce.png"></p>
+        <p>The charts at the top of the page show the historic development of earnings, transactions, active clients and traded volume <strong>across all platforms</strong>. <strong>Client details</strong> aggregates earnings, trdaded volmue and number of
+          trades for each client. <strong>Trade details</strong> then shows individual trades ni the selected time frame.</p>
+        <h2 id="letters-of-credit">Letters Of Credit</h2>
+        <p>This page shows all <strong>newly issued</strong> letters of credit.</p>
+        <p><img alt="Letters_of_credit" src="./assets/img/user_guide/lettersofcredit.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>The specific type of the letter of credit is available by hovering over the icon in the <strong>TYPE
+                OF LC</strong> column</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <h2 id="loans">Loans</h2>
+        <p>This page shows all <strong>newly issued</strong> and <strong>maturing</strong>, loans as well as those with an upcoming <strong>fixing date</strong> or <strong>expiration of interest rate conditions</strong>. The latter could be a good opportunity
+          to approach clients with unhedged rates exposure and potentially set up an interest rate swap or similar.
+        </p>
+        <p><img alt="Loans" src="./assets/img/user_guide/loans.png"></p>
+        <h2 id="pre-settlement-risk">Pre-Settlement Risk</h2>
+        <p>Clients that have almost or entirely exhausted their allocated credit lines are displayed here. Such clients could be prohibited from trading and it might be a good idea to inquire with the responsible credit officer whether their credit lines
+          could be adjusted.</p>
+        <p><img alt="Loans" src="./assets/img/user_guide/presettlementrisk.png"></p>
+        <p>The page also contains a table with clients that haven't utilized their line (less than 10%) for an extended period of time. These clients could be approached to make use of their line by e.g. drawing loans for investement purposes.</p>
+        <p><strong>NOTE: historic information is only available since 2019-09-09</strong></p>
+        <h2 id="unusual-trades">Unusual Trades</h2>
+        <p>Any <strong>unusual trades</strong> that have recently been identified are diplayed here. Unusual in the sense of the underlying algorithm here are trades that are not in line with the historic behavior of that client, e.g. a much larger notional
+          than usual. Unsual trades could suggest a change in the client's exposure or indicate new projects or similar activity started by the client.</p>
+        <p><img alt="Unusual_trades" src="./assets/img/user_guide/unusualtrades.png"></p>
+        <p>Hovering over the icon in the <strong>DETAILS</strong> column reveals a chart that visualizes how this trade is different from past behaviour.</p>
+        <p><img alt="Unusual_trades" src="./assets/img/user_guide/unusualtradesdetail.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>By clicking on the icon on the top-left corner on top of the chart, the chart can be expanded for better visibilty:</li>
+              <li>Individual datasets can be hidden by clicking on their name in the chart's legend.</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <hr>
+        <h1 id="opportunities">OPPORTUNITIES</h1>
+        <p>This section contains various <strong>forward looking</strong> analyses that allow you to <strong>proactively
+          interact</strong> with clients.</p>
+        <h2 id="client-growth">Client Growth</h2>
+        <p>The clients shown in this section are clients who <strong>have not been trading</strong> with us for the
+          <strong>last 12 months</strong> or that have not been trading at their full potential (compared to their peers in the same industry). It highlights opportunities to <strong>get in touch</strong> with these clients again and revive or extend
+          the relationship.
+        </p>
+        <h3 id="target-clients">Target Clients</h3>
+        <p>All clients shown here are underperforming in some way, but concrete <strong>suggestions</strong> to remedy the situation have already been identified by SONAR. These suggestions are based on <strong>predefined
+          conditions</strong> in the system (e.g. large amounts deposited on a current account and no recent transactions detected). You can browse thorugh the entire list of clients by using the pagination controls below the suggested three clients.</p>
+        <p><img alt="Client_growth" src="./assets/img/user_guide/clientgrowth.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>For each client detected there is a card summarizing the <strong>insights</strong> for growth opportunities. They include the next best product <strong><em>not</em></strong> traded with us but that would be suitable for the client, the <strong>potential of growth</strong>                according to the peers activity and a <strong>specific
+                suggested action</strong> (green area).</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <p>Clients are divided in either of "<strong>low share of wallet</strong>" or "<strong>inactive</strong>":
+          <img alt="Client_growth" src="./assets/img/user_guide/clientgrowthtargetinactive.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>"<strong>Inactive</strong>" clients, indicated in the top-right corner, are clients who have not been trading with us for the <strong>last 12 months</strong>. Their "potential" area shows the
+                <strong>average number of transactions</strong> their <strong>peers in the same industry</strong> have traded with us in the last year, along with the <strong>date of the last trade</strong> and the
+                <strong>asset classes previously covered</strong>.</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <p><img alt="Client_growth" src="./assets/img/user_guide/clientgrowthtargetlow.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>"<strong>Low share of wallet</strong>" clients are the ones that are not trading with us at their full potential.
+                <blockquote>
+                  <ul>
+                    <li>The <strong>red bar</strong> shows the current share of wallet <strong>the client</strong> is trading with us;</li>
+                    <li>the <strong>black segment</strong> shows the share <strong>the average peers</strong> are trading with us (red + black);</li>
+                    <li>and the <strong>grey segment</strong> shows the share of the <strong>top clients</strong> that are trading the <strong>biggest share of wallet</strong> with us (red + black + grey).</li>
+                  </ul>
+                </blockquote>
+              </li>
+              <li>It is possible to load more clients by clicking "<strong>load more</strong>".</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <h3 id="date-of-last-trade">Date of last trade</h3>
+        <p>This table shows that last time each client in you protfolio has last traded with us. Note that clients that do not have a recorded markets transaction are not displayed here.</p>
+        <h2 id="foreign-exchange-monitoring">Foreign Exchange Monitoring</h2>
+        <p>To help you stay on top of upcoming events this page features an Economic Calendar which links events with clients with an exposure in the underlying currency.</p>
+        <p>Based on the <strong>MACD</strong> (Moving Average Convergence Divergence) analysis, the <strong>Technical
+          analysis</strong> section shows currencies for which the <strong>market sentiment</strong> has recently changed. This analysis reveals changes in the <strong>strength, direction, and momentum</strong> of a trend.
+        </p>
+        <p><img alt="Exchange_rate_monitoring" src="./assets/img/user_guide/foreignexchangemonitoring.png"></p>
+        <h2 id="maturing-quotes">Maturing Quotes</h2>
+        <p>This page displays quotes based on requests by clients on our ecommerce platforms that ended being traded away but are now near maturity. That is the client likely traded the particular instrument with another bank, but we are in a position to
+          follow-up on the trade close to maturity regardless.</p>
+        <p><img alt="Lost_RFQ" src="./assets/img/user_guide/maturingquotes.png"></p>
+        <h2 id="hedging-opportunities">Hedging Opportunities</h2>
+        <p>Clients that are not hedging but are rather trading FX Spots in short succession are exposed to significant foreign exchange risk that they should rather hedge via Forwards, Options or Swaps. This page shows those clients with <strong>three or more FX Spot trades</strong>          within a time frame of the <strong>30
+          days</strong>.</p>
+        <p><img alt="Hedging_opportunities" src="./assets/img/user_guide/hedgingopportunities.png"></p>
+        <h2 id="maturities">Maturities</h2>
+        <p>The maturites page shows maturing <em>Markets</em> products across asset classes. The page starts with a
+          <em>tree</em>-chart that summarizes the maturities with different <strong>colours</strong> depending on the
+          <strong>maturity date</strong> and different <strong>sizes</strong> of the boxes depending on the
+          <strong>notional amounts</strong>. The chart helps to quickly identify large volume trades and days with a particularly large amount or volume of maturing trades. More information is available by hovering over the respective box in the chart.</p>
+        <p>The table below the chart contains the <strong>same</strong> trades but with more detailed information and in a more traditional presentation.</p>
+        <p><strong>NOTE:</strong> The <strong>PRESENT VALUE</strong> column shows the present value of the
+          <strong>entire strcutre</strong>, i.e. the sum of present value of all active trades in e.g. an currency management scheme. Details can be obtained by hovering over the value displayed in the column.</p>
+        <p><img alt="Maturities_chart" src="./assets/img/user_guide/maturities.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>By hovering over the boxes it is possible to get <strong>more details</strong> on the maturity.</li>
+              <li>When clicking "<strong>toggle quick overview</strong>" the chart opens/closes.</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <h2 id="trading-forecast">Trading Forecast</h2>
+        <p>By identifying trading patterns SONAR is able to predict future trades and for clicnt-product-currency-combinations that have exhibited some regular pattern in the past.</p>
+        <p><img alt="Trading_forecast" src="./assets/img/user_guide/tradingforecast.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>The probabilities are grouped by likelihood <strong>classes</strong> and given different colours (the greener the larger the likelihood).</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <hr>
+        <h1 id="exposures-and-aggregated-data">EXPOSURES AND AGGREGATED DATA</h1>
+        <p>This section contains various aggregated datasets on your clients' foreign exchange and commodity transactions.
+        </p>
+        <h2 id="commodity-exposure">Commodity Exposure</h2>
+        <p>For each client that has traded a commodity product in the last 24 months this page shows the sums of the notional amounts, traded and outstanding volumes as well as the number of overall trades. Outstanding volume thereby represents the sum of
+          notionals of all <strong>active</strong> trades. The <strong>OVERVIEW</strong> column contains several other visualizations that can be accessed by hovering over the respective info box.</p>
+        <p><img alt="Product_view" src="./assets/img/user_guide/commodityexposure.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>The pop-ups available in the <strong>OVERVIEW</strong> column can be expanded by clicking the icon on the top of the top-left corner of the chart.</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <h2 id="foreign-exchange-exposure">Foreign Exchange Exposure</h2>
+        <p>For each client that has traded a foreign exchange product in the last 24 months this page shows the sums of the notional amounts, traded and outstanding volumes as well as the number of overall trades. Outstanding volume thereby represents the
+          sum of notionals of all <strong>active</strong> trades. The <strong>OVERVIEW</strong> column contains several other visualizations that can be accessed by hovering over the respective info box.</p>
+        <p>The second table (<strong>Exposure due to liquid assets</strong>) contains a list of all current accounts denominated in non-EUR currencies with some auxiliary information.</p>
+        <p><img alt="Fx_Exposure" src="./assets/img/user_guide/foreignexchangeexposure.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>It is possible to <strong>search for a specific currency</strong> followed by "
+                <strong>bought</strong>" or "<strong>sold</strong>" in order to show all the trades with a specific direction.
+              </li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <h2 id="product-purchase-history">Product Purchase History</h2>
+        <p>This page contains highly aggregated statistics on traded products over the <strong>last 12 months</strong> by product category.</p>
+        <p><img alt="Product_view" src="./assets/img/user_guide/productpurchasehistory.png"></p>
+        <h2 id="forex-markup">Forex Markup</h2>
+        <p>The following chart gives a visual interpretation of the <strong>average markup</strong> applied for
+          <strong>FX Spot</strong> and <strong>FX Forward</strong> in the different <strong>currency pairs</strong>,
+          <strong>ticket sizes</strong> and <strong>maturities</strong>. On the right-hand side it is given a
+          <strong>scale</strong> for the minimum and maximum markup applied and the respective colour grades for different levels.</p>
+        <blockquote>
+        </blockquote>
+        <p><img alt="FX_statistics" src="./assets/img/user_guide/forexmarkup.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li><strong>Different currencies</strong> can be selected from the drop-down menu above the chart.</li>
+              <li>The more <strong>reddish</strong> chart gets the <strong>bigger is the markup</strong> applied.</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <hr>
+        <h1 id="alerts">ALERTS</h1>
+        <p>Here users can set up custom alerts for:</p>
+        <ul>
+          <li>status changes of a specific trade</li>
+          <li>monitoring when a client trades a specific product</li>
+          <li>a client's current account balance crosses a specified threshold</li>
+          <li>a client's earnings cross a specified threshold over a given duration</li>
+          <li>a client has any maturing trades in a given timespan</li>
+          <li>a client's activity level falls below some threshold</li>
+          <li>there is a trade predicted for a given client</li>
+        </ul>
+        <p><img alt="user_alerts_page" src="./assets/img/user_guide/alerts.png"></p>
+        <p>An alert can take one of three statuses:</p>
+        <ol>
+          <li>When an alert is created the specified condition will be evaluated overnight. Until the alert has been evaluated at least once, it is in the <em>status could not be detmined</em> state.</li>
+          <li>When an alert has been evaluated and its conditions are <strong>not</strong> met it takes the <em>alert
+            not triggered</em> status. For example, an alert could be specified to trigger once the activity level of a client falls to a level of below 5. When the current activity level of that client is 5 or above, the alert would be in the
+            <em>alert not triggered</em> status.</li>
+          <li>Finally, when an alerts conditions are met it switches to the <em>alert triggerd</em> status. It will remain in this status for as long as the conditions of the alert are met.</li>
+        </ol>
+        <p><img alt="user_alerts_statuses" src="./assets/img/user_guide/alertsstatus.png"></p>
+        <p>Alerts can be modified or deleted by the user by clicking the respective buttons in the interface. When an alert is no longer valid (e.g. trade expired) it is up to the user to delete the alert.</p>
+        <p><strong>Note</strong>: alerts are retained in the database even when deleted and can be recovered if need be. In such casese please refer to the people listed in the <a [routerLink]="" (click)='jumpToAnchor("#contacts")'>CONTACTS</a> section.</p>
+        <hr>
+        <h1 id="deputy-management">DEPUTY MANAGEMENT</h1>
+        <p>Deputy management is accessible via the <strong>settings</strong> button in the top navigation bar. Here you can grant another user access to your client protfolio. Users added as deputy receive full visibility on your clients, i.e. each subpage
+          then shows information on clients by both the user himself as well as clients that are serviced by the user grating the deputy right.</p>
+        <p><img alt="Exchange_rates" src="./assets/img/user_guide/deputymanagement.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>The <strong>P-number</strong> of the colleague has to be inserted in the text box under <strong>"user
+                id"</strong>, and a <strong>validity date</strong> must be specified</li>
+              <li>After granting a user deputy rights they can be <strong>revoked</strong> from the panel on the right. A list of users to whom access rights have been granted is available at <strong>the top</strong>.</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <hr>
+        <h1 id="client-view">CLIENT VIEW</h1>
+        <p>The <strong>Client View</strong> page is accessible through searching for a user in the search bar or by clicking the <em>view</em> button in the tooltip that appears on hovering a client's name anywhere in SONAR. The client view collects all
+          information available on a particular client.</p>
+        <h2 id="general-information">General Information</h2>
+        <p><img alt="Navigation_window" src="./assets/img/user_guide/clientview.png"></p>
+        <p>Some panels on this page feature a <strong>show...</strong> link that either reveals additional information or redirects to the respecitve subpage in SONAR.</p>
+        <p><img alt="Recent_trades" src="./assets/img/user_guide/mostrecenttrades.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>The coloured bar shows the client's current <strong>activity level</strong> with the striped segment as the <strong>recent change</strong> (if grey it means dropped).</li>
+              <li>By clicking the <strong>show most recent trades</strong> link a table with the five most recent trades is revealed.</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <p>When a client is featured in any of the topic specific analyses throughout SONAR a notification regarding the particular event is also displayed in the client view</p>
+        <p><img alt="Opportunities" src="./assets/img/user_guide/clientviewnotification.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>It is possible to expand the card by clicking on "<strong>show me</strong>" and go to the section where the alert was <strong>originated from</strong>.</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <p>The earnings panel shows the historic development of earnings with this particular client <em>across all
+          asset classes</em>. The top graph gives the earnings per quatter, whereas the bottom chart gives the yearly, cummulative earnings. The blue shaded are in the background of the top graph gives the typical range of earnings with other clients
+          in the same peer group.</p>
+        <p><img alt="Earnings_of_client" src="./assets/img/user_guide/clientviewearnings.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>In the upper chart, are displayed the <strong>quarterly earnings of the client</strong>, the
+                <strong>earnings moving average</strong> and the <strong>earnings of the peer group</strong> (industry). In the lower chart are shown the quarterly <strong>cumulative earnings</strong>.</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <h2 id="portfolio-analysis">Portfolio Analysis</h2>
+        <p>The portfolio analysis section contains information on <strong>active and past</strong> transactions by the client.
+        </p>
+        <p><img alt="Client_analysis" src="./assets/img/user_guide/clientviewportfolioanalysis.png"></p>
+        <blockquote>
+          <blockquote>
+            <ul>
+              <li>The table "<strong>active trades</strong>" shows all active instruments by the client. It mirrors the table in the <em>Maturities</em> page.</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+        <ul>
+          <li>The <strong>Foreign exchange exposure</strong> panel shows the exposure of the client to specific currencies based on transactions within the last 24 months.</li>
+          <li>The <strong>Foreign exchange markup statistics</strong> panel details the average markup paid by the client for each currency pair and compares it with the markup paid by clients in the peer group for similar transactions. A <strong>positive</strong>            value here means that the client paid <strong>more</strong> than its peers for comparable transactions.</li>
+          <li>The <strong>Current accounts</strong> panel shows up to date information on sight deposits held by the client.
+          </li>
+          <li>The <strong>Loans</strong> panel shows the client's <em>active</em> loans.</li>
+          <li>The <strong>Commodity exposure</strong> panel mirrors the <em>Foreign exchange exposure</em> panel but for commodities.
+          </li>
+          <li>The <strong>Foreign exchange trading channel</strong> pannel gives the fraction of the client's FX trades by platform.</li>
+        </ul>
+        <p><img alt="FX_Markup_and_Current_Accounts" src="./assets/img/user_guide/clientviewportfolioanalysisdetails.png"></p>
+        <h2 id="cross-and-upselling-opportunities">Cross- and Upselling Opportunities</h2>
+        <p>The final section of the <em>Client View</em> page summarizes various suggestions and indicators for extending the scope of services we offer to the client.</p>
+        <ul>
+          <li>The <strong>Suggeted actions</strong> panel looks at all information in the <em>Client View</em> page and picks and presents the strongest indicators for products and services that could be offered to the client.
+          </li>
+          <li>The <strong>Most popular products in peer group</strong> gives the ten most traded products in the peer group. Items in green are already covered for this client and items marked with a star are most likely to be relevant for this particular
+            client.
+          </li>
+          <li>The <strong>Potential additional foreign exchange exposure</strong> panel contains a map in which countries (representing currencies) that are already actively hedged or serviced via <em>Markets</em> (FX) products are displayed in blue. Colors
+            other than grey and blue represent various degrees of certainty that the client has an exposure in a particular currency but is not yet trading that currency with <em>CTS</em>.</li>
+          <li>The <strong>Sector analysis</strong> panel gives detailed statistics on the composition of the peer group and the (FX) hedging behaviour observed therein.</li>
+          <li>The <strong>Estimated share of wallet</strong> panel give an approximated share of wallet per asset class for that client. This is an indication only.</li>
+        </ul>
+        <p><img alt="Trading_channels" src="./assets/img/user_guide/clientviewupselling.png"></p>
+        <hr>
+        <h1 id="contacts">CONTACTS</h1>
+        <p><strong>Dr. Michael Schreier</strong> E-mail <a href="mailto:Michael.Schreier@unicredit.de">Michael.Schreier@unicredit.de</a> Tel. +49 89 378 11445</p>
+        <p>Address: Am Eisbach 3; 80538; München; Germany</p>
+        <p><strong>Zilal El Joulani</strong> E-mail <a href="mailto:Zilal.ElJoulani@unicredit.eu">Zilal.ElJoulani@unicredit.eu</a> Tel. +44 782 687 7519</p>
+        <p>Address: Moor House; 120 London Wall; EC2Y 5ET; London; Great Britain</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

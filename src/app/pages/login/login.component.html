@@ -1,0 +1,39 @@
+<!-- Header -->
+<div class="navbar navbar-default fixed-top">
+  <div class="container-fluid">
+      <div class="navbar-header">
+          <a class="navbar-brand" href="">
+              <span style="vertical-align: middle; display: inline-block; height: 100%"></span>
+              <img src="assets/img/static/logoHiRes.png" width="136px" alt="">
+          </a>
+          <img class="pl-3 border-left" src="assets/img/static/SONAR_favicon_196x196.png" height="36px" alt="">
+      </div>
+  </div>
+</div>
+
+<!-- user input -->
+<div class="container-fluid d-flex bg-white" style="padding-top: 60px; height: 100vh;">
+  <form class="mx-auto" style="width: 80%; max-width: 450px; margin-top: 100px;">
+      <h1 class="display-4 mb-3">Please login</h1>
+      <div class="form-group">
+          <label class="text-muted" for="UserNameInput">User name</label>
+          <input type="text" class="form-control" id="UserNameInput" placeholder="">
+          <label id="UserNameInputError" class="mt-1 text-danger collapse">unknown user name</label>
+      </div>
+      <div class="form-group mt-3">
+          <label class="text-muted" for="PasswordInput">Password</label>
+          <input type="password" class="form-control" id="PasswordInput" placeholder="">
+          <label id="PasswordInputError" class="mt-1 text-danger collapse">bad password</label>
+      </div>
+      <!-- <a class="hide text-info text-uppercase" href="" style="text-decoration: none;" id="ResetPassword">reset password <i class="fa fa-angle-right"></i></a> -->
+      <div class="mb-3 mt-1">
+          <div id="windowsLoginCheckboxWrapper" class="custom-control form-control-md custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="WindowsLoginCheck" (click)="toggleInput()">
+              <label class="custom-control-label text-secondary" for="WindowsLoginCheck">Login with Windows password.</label>
+          </div>
+          <label id="WindowsLoginCheckError" class="mt-1 text-danger collapse">Login using windows credentials not possible</label>
+      </div>
+      <button type="button" class="btn btn-info btn-block text-uppercase" (click)="autoLogin()" id="LoginButton">login</button>
+      <label id="GeneralError" class="mt-1 text-danger collapse">Unkown user name or bad password</label>
+  </form>
+</div>

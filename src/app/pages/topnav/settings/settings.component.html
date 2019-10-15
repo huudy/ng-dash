@@ -1,0 +1,25 @@
+<div class="dropdown" id="settingsDropdown">
+  <button class="btn text-muted dropdown-toggle" type="button" id="settingsMenuButton" data-toggle="dropdown"
+    aria-haspopup="true" aria-expanded="false">
+    <!-- settings -->
+    <i class="fas fa-cog mr-2"></i><b>settings</b>
+  </button>
+  <div class="dropdown-menu py-0" aria-labelledby="settingsMenuButton">
+    <div class="dropdown-item p-0" href="" *ngIf="!pushNotificationsPermission"><div class="alert alert-warning border-0 small mb-0 text-wrap">push notifications are disabled in your browser</div></div>
+
+    <!-- <div class="dropdown-item prevent-default" href="" *ngIf="!pushNotificationsPermission">
+        <div class="custom-control form-control custom-checkbox border-0">
+            <input type="checkbox" class="custom-control-input" (change)="print()">
+            <label class="custom-control-label text-secondary small">enable / disable push notifications</label>
+        </div>
+    </div> -->
+
+    <!-- <div class="dropdown-item cursor-pointer text-muted font-weight-bold" href=""><i class="fas fa-sign-out-alt mr-3"></i>log out</div> -->
+    <div class="dropdown-item cursor-pointer text-muted font-weight-bold" href="" routerLink="/index/deputyManagement"><i class="fas fa-briefcase mr-3"></i>manage deputies</div>
+    <div class="dropdown-item cursor-pointer text-muted font-weight-bold" href="" (click)="showUserguide()"><i class="fas fa-question-circle mr-3"></i>show userguide</div>
+    <div class="dropdown-item cursor-pointer text-muted font-weight-bold" href="" (click)="showMessages()"><i class="fas fa-exclamation-triangle mr-3"></i>show warnings</div>
+    <div *ngIf="isAdmin" class="dropdown-item prevent-default py-1" href="">
+      <i class="fas fa-user-cog mr-2 text-muted"></i><input class="form-control mb-1 pl-1 border-0 text-muted font-weight-bold w-50" type="text" placeholder="admin - show & set username" [(ngModel)]="externalUsername" (ngModelChange)="setExternalUsername()">
+    </div>
+  </div>
+</div>

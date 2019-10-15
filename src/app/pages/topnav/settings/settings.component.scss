@@ -1,0 +1,14 @@
+@media only screen and (max-width: 1020px) {
+  #settingsDropdown {
+      display: none;
+  }
+}
+
+.dropdown-menu {
+  width: 270px;
+}
+
+.dropdown-item {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}

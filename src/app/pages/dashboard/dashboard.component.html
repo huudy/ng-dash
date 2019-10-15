@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer"
+        (click)="showUserguide('#dashboard')"></i>
+      <h2>DASHBOARD</h2>
+      <p>Summary of the most important findings today.</p>
+      <div *ngIf="noDataWarning" class="alert border-0 alert-warning">You may need to switch to <span class="font-weight-bold">Team, Region, or Country View</span> to access more data<i class="float-right text-warning fas fa-exclamation-triangle" style="font-size: 1.25rem;"></i></div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid" id="dashboardContainer">
+  <div [@listAnimation]="tiles.length">
+    <div class="row">
+      <!-- new elements go here -->
+      <div *ngFor="let tile of tiles" class="col-lg-6 col-xxl-4 py-3">
+        <app-dashboard-tile [tile]="tile"></app-dashboard-tile>
+      </div>
+    </div>
+  </div>
+</div>

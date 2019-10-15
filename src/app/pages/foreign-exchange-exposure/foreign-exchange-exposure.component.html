@@ -1,0 +1,24 @@
+<div class="card border-0 shadow">
+  <div class="card-body">
+    <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#foreign-exchange-exposure')"></i>
+    <h2 class="sub_header">FOREIGN EXCHANGE EXPOSURE</h2>
+    <h5>Exposure due to transactions in Markets</h5>
+    <p>Traded FX volumes for the last 24 months. Traded volumes aggregated from all spots, forwards and options in the last 24 months. Outstanding volume is the sum of all notionals of active trades. Use quotation marks to search for specific trade directions
+      (e.g. "buy GBP").</p>
+
+    <app-transaction-exposure-table *ngIf="dataRetrieved" [data]="transactionExposureData" [search]="search[0]">
+    </app-transaction-exposure-table>
+
+  </div>
+</div>
+
+<div class="card border-0 shadow mt-3">
+  <div class="card-body">
+    <h5>Exposure due to liquid assets</h5>
+    <p>Current balances for accounts denominated in foreign currencies.</p>
+
+    <app-foreign-current-accounts-table *ngIf="dataRetrieved" [data]="foreignCurrentAccountsData" [search]="search[1]">
+    </app-foreign-current-accounts-table>
+
+  </div>
+</div>

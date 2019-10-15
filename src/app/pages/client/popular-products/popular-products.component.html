@@ -1,0 +1,19 @@
+<div class="card border-0 h-100 shadow">
+  <div class="card-body">
+    <div class="font-weight-bold text-muted mb-2">Most popular products in peer group</div>
+    <p>The client currently holds or has recently traded items in green. Starred products are deemed particularly
+      relevant for this client.</p>
+  </div>
+  <div class="bg-light p-3">
+    <div class="row">
+      <div *ngFor="let product of data" class="col-6">
+        <div class="alert small shadow-sm py-2 mb-2"
+          [ngClass]="product.coveredByClient?'accent-success alert-success border-0':'accent-primary bg-white'">
+          {{product.product}} <i *ngIf="product.recommendedToClient"
+            class="fas fa-star text-warning shadow-sm position-absolute"
+            style="font-size: 0.75rem; right: 0.25rem;"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

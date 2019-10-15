@@ -1,0 +1,112 @@
+<div class="card border-0 h-100 shadow">
+  <div class="card-body">
+    <h5 class="card-title">Recent and upcoming summary (&#177;7 days)</h5>
+    <p>Summary of the business activity within the last and outlook for next the seven business days.</p>
+
+    <div class="accordion" id="recentUpcoming">
+      
+      <!-- FIRST -->
+      <div class="card border-0">
+        <div class="card-header bg-light p-2 border-bottom-0 cursor-pointer" id="recentUpcomingNewLoans"
+          data-toggle="collapse" data-target="#recentUpcomingNewLoansDetails">
+          <span class="text-muted font-weight-bold">{{numberNewLoans}}</span> new loans
+          <div class="btn btn-sm text-info float-right py-0"><i class="fas fa-plus"></i></div>
+        </div>
+        <div id="recentUpcomingNewLoansDetails" class="collapse" data-parent="#recentUpcoming">
+          <div class="card-body px-0">
+            <app-mgmt-new-loans-table [data]="dataNewLoans"></app-mgmt-new-loans-table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECOND -->
+      <div class="card border-left-0 border-right-0">
+        <div class="card-header bg-light p-2 border-bottom-0 cursor-pointer" id="recentUpcomingMaturingLoans"
+          data-toggle="collapse" data-target="#recentUpcomingMaturingLoansDetails">
+          <span class="text-muted font-weight-bold">{{numberMaturingLoans}}</span> maturing loans
+          <div class="btn btn-sm text-info float-right py-0"><i class="fas fa-plus"></i></div>
+        </div>
+        <div id="recentUpcomingMaturingLoansDetails" class="collapse" data-parent="#recentUpcoming">
+          <div class="card-body px-0">
+            <app-mgmt-maturing-loans-table [data]="dataMaturingLoans"></app-mgmt-maturing-loans-table>
+          </div>
+        </div>
+      </div>
+
+      <!-- THIRD -->
+      <div class="card border-left-0 border-right-0">
+        <div class="card-header bg-light p-2 border-bottom-0 cursor-pointer" id="recentUpcomingEcommTrades"
+          data-toggle="collapse" data-target="#recentUpcomingEcommTradesDetails">
+          <span class="text-muted font-weight-bold">{{numberEcommerceTrades}}</span> ecommerce trades
+          <div class="btn btn-sm text-info float-right py-0"><i class="fas fa-plus"></i></div>
+        </div>
+        <div id="recentUpcomingEcommTradesDetails" class="collapse" data-parent="#recentUpcoming">
+          <div class="card-body px-0">
+            <app-mgmt-ecommerce-trades-table [data]="dataEcommerceTrades"></app-mgmt-ecommerce-trades-table>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOURTH -->
+      <div class="card border-left-0 border-right-0">
+        <div class="card-header bg-light p-2 border-bottom-0 cursor-pointer" id="recentUpcomingMatFX"
+          data-toggle="collapse" data-target="#recentUpcomingMatFXDetails">
+          <span class="text-muted font-weight-bold">{{numberForeignExchangeMaturities}}</span> maturing foreign exchange trades
+          <div class="btn btn-sm text-info float-right py-0"><i class="fas fa-plus"></i></div>
+        </div>
+        <div id="recentUpcomingMatFXDetails" class="collapse" data-parent="#recentUpcoming">
+          <div class="card-body px-0">
+            <app-mgmt-maturities-table [data]="maturitiesForeignExchange" [id]="'recentUpcomingMatFXTable'">
+            </app-mgmt-maturities-table>
+          </div>
+        </div>
+      </div>
+
+      <!-- FIFTH -->
+      <div class="card border-left-0 border-right-0">
+        <div class="card-header bg-light p-2 border-bottom-0 cursor-pointer" id="recentUpcomingMatFI"
+          data-toggle="collapse" data-target="#recentUpcomingMatFIDetails">
+          <span class="text-muted font-weight-bold">{{numberFixedIncomeMaturities}}</span> maturing fixed income trades
+          <div class="btn btn-sm text-info float-right py-0"><i class="fas fa-plus"></i></div>
+        </div>
+        <div id="recentUpcomingMatFIDetails" class="collapse" data-parent="#recentUpcoming">
+          <div class="card-body px-0">
+            <app-mgmt-maturities-table [data]="maturitiesFixedIncome" [id]="'recentUpcomingMatFITable'">
+            </app-mgmt-maturities-table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIXTH -->
+      <div class="card border-left-0 border-right-0">
+        <div class="card-header bg-light p-2 border-bottom-0 cursor-pointer" id="recentUpcomingMatINV"
+          data-toggle="collapse" data-target="#recentUpcomingMatINVDetails">
+          <span class="text-muted font-weight-bold">{{numberInvestmentMaturities}}</span> maturing investment product trades
+          <div class="btn btn-sm text-info float-right py-0"><i class="fas fa-plus"></i></div>
+        </div>
+        <div id="recentUpcomingMatINVDetails" class="collapse" data-parent="#recentUpcoming">
+          <div class="card-body px-0">
+            <app-mgmt-maturities-table [data]="maturitiesInvestment" [id]="'recentUpcomingMatINVTable'">
+            </app-mgmt-maturities-table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEVENTH -->
+      <div class="card border-bottom-0 border-left-0 border-right-0">
+        <div class="card-header bg-light p-2 border-bottom-0 cursor-pointer" id="recentUpcomingMatOther"
+          data-toggle="collapse" data-target="#recentUpcomingMatOtherDetails">
+          <span class="text-muted font-weight-bold">{{numberOtherMaturities}}</span> other product trades
+          <div class="btn btn-sm text-info float-right py-0"><i class="fas fa-plus"></i></div>
+        </div>
+        <div id="recentUpcomingMatOtherDetails" class="collapse" data-parent="#recentUpcoming">
+          <div class="card-body px-0">
+            <app-mgmt-maturities-table [data]="maturitiesOther" [id]="'recentUpcomingMatOtherTable'">
+            </app-mgmt-maturities-table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

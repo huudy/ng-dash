@@ -1,0 +1,19 @@
+<div class="card border-0 shadow">
+  <div class="card-body">
+    <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer"
+      (click)="showUserguide('#letters-of-credit')"></i>
+    <h2 class="sub_header">NEW LETTERS OF CREDIT</h2>
+
+    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+      <label class="btn btn-light btn-sm shadow-sm cursor-pointer active" (click)="updateTimeframe(7)">
+        <input type="radio" checked> last week
+      </label>
+      <label class="btn btn-light btn-sm shadow-sm cursor-pointer" (click)="updateTimeframe(31)">
+        <input type="radio"> last month
+      </label>
+    </div>
+
+    <p>Letters of credit arranged between UniCredit and your clients within the last seven days.</p>
+    <app-letters-of-credit-table *ngIf="dataRetrieved" [data]="letterofCreditData" [search]="search"></app-letters-of-credit-table>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="card h-100 border-0 shadow mt-3 accent-{{fromattedAlert['decorationState']}}" id="{{fromattedAlert['id']}}">
+  <div class="card-body pt-2 pr-2 pb-0 pl-3">
+    <div class="btn btn-sm btn-light text-danger shadow-sm cursor-pointer float-right ml-2" (click)="deleteAlert()">
+      delete</div>
+    <div class="btn btn-sm btn-light text-muted shadow-sm cursor-pointer float-right" (click)="modifyAlert()">modify
+    </div>
+    <h6 class="text-uppercase mb-0">{{fromattedAlert['name']}}</h6>
+    <div class="small text-{{fromattedAlert['textState']}}">{{fromattedAlert['conditionState']}}</div>
+    <div class="container ml-0 mt-2">
+      <div class="row align-items-center small">
+        <div class="col-sm-6 col-md-3 px-0 mb-auto">
+          <div class="text-muted text-uppercase mb-0">{{fromattedAlert['referenceType']}}</div>
+          {{fromattedAlert['reference']}}
+        </div>
+        <div class="col-sm-6 col-md-3 px-0 mb-auto">
+          <div class="text-muted text-uppercase mb-0">condition</div>
+          <div *ngFor="let condition of fromattedAlert['conditions']">{{condition}}</div>
+        </div>
+        <div class="col-sm-6 col-md-3 px-0 mb-auto">
+          <div class="text-muted text-uppercase mb-0">current</div>
+          {{fromattedAlert['currentValue']}}
+        </div>
+        <div class="col-sm-6 col-md-3 px-0 mb-auto">
+          <div class="text-muted text-uppercase mb-0">last update</div>
+          {{fromattedAlert['currentValueDate']}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

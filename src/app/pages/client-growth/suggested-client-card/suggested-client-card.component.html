@@ -1,0 +1,75 @@
+<div *ngIf="data.category == 'inactive' else shareOfWallet" class="card border-0 shadow suggested-client-card" [@enter]>
+  <div class="card-header pb-0 bg-white border-0">
+    <div class="badge badge-{{client.statusColor}} float-right font-weight-light shadow-sm">{{client.status}}</div>
+    <h4 #title [innerHtml]="client.name"></h4>
+  </div>
+  <div class="card-body">
+    <div class="alert bg-light">
+      <h5 class="font-weight-light text-muted">Potential</h5>
+      <div>
+        <span class="font-weight-bold large text-muted">{{client.potentialTransactions}}</span> transactions per year by similar clients
+      </div>
+      <hr />
+      <div><span class="small text-muted">last trade:</span> {{client.lastTradeDate}}</div>
+      <div>
+        <span class="small text-muted">covered asset classes in the past: </span>
+        <div *ngFor="let assetClass of client.coverage" class="badge badge-sm bg-white shadow-sm mx-1 cursor-default">
+          {{assetClass}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-light position-relative p-3" #scrollbarContainer>
+    <div>
+      <h5 class="text-center small text-muted">suggested actions</h5>
+      <p *ngFor="let suggestion of client.suggestions" class="alert bg-white border-0 accent-success shadow-sm" [innerHtml]="suggestion">
+      </p>
+    </div>
+    <div>
+      <h5 class="text-center small text-muted">the client might also be interested in</h5>
+      <div class="row">
+        <div *ngFor="let product of client.products" class="col-6">
+          <div class="alert bg-white small accent-primary shadow-sm py-2 mb-2">
+            {{product}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #shareOfWallet>
+  <div class="card border-0 shadow suggested-client-card" [@enter]>
+    <div class="card-header pb-0 bg-white border-0">
+      <div class="badge badge-{{client.statusColor}} float-right font-weight-light shadow-sm">{{client.status}}</div>
+      <h4 #title [innerHtml]="client.name"></h4>
+    </div>
+    <div class="card-body">
+      <div class="alert bg-light">
+        <h5 class="font-weight-light text-muted">Potential</h5>
+        <div class="progress my-2">
+          <div class="progress-bar bg-danger" role="progressbar" [style.width.%]="client.shareOfWallet">this client
+          </div>
+          <div class="progress-bar progress-bar-striped bg-dark" role="progressbar" [style.width.%]="client.shareOfWalletAvg">average clients</div>
+          <div class="progress-bar progress-bar-striped bg-secondary" role="progressbar" [style.width.%]="client.shareOfWalletDecent">decent clients</div>
+        </div>
+        <hr />
+        <div><span class="small text-muted">last trade:</span> {{client.lastTradeDate}}</div>
+      </div>
+    </div>
+    <div class="bg-light position-relative p-3" #scrollbarContainer>
+      <div>
+        <h5 class="text-center small text-muted">suggested actions</h5>
+        <p *ngFor="let suggestion of client.suggestions" class="alert bg-white border-0 accent-success shadow-sm" [innerHtml]="suggestion">
+        </p>
+      </div>
+      <div>
+        <h5 class="text-center small text-muted">the client might also be interested in</h5>
+        <div class="row">
+          <div *ngFor="let product of client.products" class="col-6">
+            <div class="alert bg-white small accent-primary shadow-sm py-2 mb-2">
+              {{product}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,157 @@
+#sidebar {
+    width: 60px;
+    height: 100vh;
+    /* background: #333; */
+    background: var(--gray-200);
+    color: var(--gray-500);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+
+    position: fixed;
+    top: 0;
+}
+
+.widget-icon {
+    font-size: 1.5rem;
+    height: 60px;
+}
+
+.widget-icon:hover {
+    /* color: white; */
+    color: var(--gray-700);
+}
+
+.active .widget-icon {
+    border-left: #e2001a solid 3px !important;
+}
+
+.selected .widget-icon {
+    /* background: #262626; */
+    background: var(--gray-400);
+    color: white;
+}
+
+.sidebar-slider {
+    width: 0px;
+    height: calc(100vh - 60px);
+    /* background: #262626; */
+    background: var(--gray-400);
+    /* color: #333; */
+    color: var(--gray-700);
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    padding-top: 1rem;
+    z-index: 1000;
+    opacity: 0;
+
+    position: fixed;
+    overflow-x: hidden;
+    top: 60px;
+    left: 60px;
+    transition: opacity 0.5s, padding 0.5s, width 0.5s, z-index 0s;
+}
+
+.sidebar-slider li {
+    /* white-space: nowrap; */
+    color: var(--gray-600);
+    padding-bottom: 1.5rem;
+    width: 131px;
+    
+    cursor: pointer;
+}
+
+.sidebar-slider li:hover {
+    color: #fff;
+}
+
+.sidebar-slider-extended {
+    width: 163px !important;
+    padding: 1rem !important;
+    opacity: 1;
+    z-index: 999;
+}
+
+.sidebar-slider-extended-fast {
+    transition: 0 !important;
+}
+
+.no-transition {
+    transition: none;
+}
+
+/*#sidebarBase {
+    width: 60px;
+    height: 100vh;
+    background: #333;
+    color: #888;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    position: fixed;
+    top: 0;
+}
+
+.sidebar-widget {
+    font-size: 1.5rem;
+    height: 60px;
+}
+
+.sidebar-widget.active {
+    border-left: #f00 solid 3px !important;
+}
+.sidebar-widget.selected {
+    background: #262626;
+    color: white;
+}
+
+.sidebar-widget:hover {
+    color: white;
+}
+
+
+#sidebarSlider {
+    width: 0px;
+    height: calc(100vh - 60px);
+    background: #262626;
+    color: #333;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0rem;
+    padding-right: 0rem;
+    padding-top: 1rem;
+
+    position: fixed;
+    overflow-x: hidden;
+    top: 60px;
+    left: 60px;
+
+    transition: 0.5s;
+}
+
+.siderbar-slider-extended {
+    width: 150px !important;
+    padding: 1rem !important;
+}
+
+.sidebar-slider-item {
+    white-space: nowrap;
+    color: #888;
+    padding-bottom: 1rem;
+    
+    cursor: pointer;
+}
+
+.sidebar-slider-item:hover {
+    white-space: nowrap;
+    color: #fff;
+}
+
+
+.no-transition {
+    transition: none;
+}*/

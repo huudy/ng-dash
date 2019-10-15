@@ -1,0 +1,11 @@
+<div class="card border-0 h-100 shadow">
+  <div class="card-body">
+    <div class="font-weight-bold text-muted mb-2">Suggested actions</div>
+    <p>Consider pursuing the following actions based on the client's current situation.</p>
+  </div>
+  <div class="bg-light p-3 position-relative" style="height: 300px;" #scrollbarContainer>
+    <p *ngFor="let suggestion of suggestions" class="alert bg-white border-0 accent-success shadow-sm"
+      [innerHtml]="suggestion">
+    </p>
+  </div>
+</div>

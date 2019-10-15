@@ -1,0 +1,10 @@
+<div class="card border-0 shadow">
+  <div class="card-body">
+    <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#trading-forecast')"></i>
+    <h2 class="sub_header">TRADING FORECAST</h2>
+    <p>The following trades are predicted to be requested by your clients within the next seven days. Calling clients
+      preemptively to inquire about the expected trades increases chances that the trade is done with us rather than
+      with a competitor.</p>
+    <app-trading-forecast-table  *ngIf="dataRetrieved" [data]="tradingForeacstData" [search]="search"></app-trading-forecast-table>
+  </div>
+</div>

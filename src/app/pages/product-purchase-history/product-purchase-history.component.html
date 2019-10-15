@@ -1,0 +1,9 @@
+<div class="card border-0 shadow">
+  <div class="card-body">
+    <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#product-purchase-history')"></i>
+    <h2 class="sub_header">PRODUCT PURCHASE HISTORY</h2>
+    <p>Aggregated product purchases for your clients over the last 12 months.</p>
+    <app-product-purchase-history-table *ngIf="dataRetrieved" [data]="purchaseHistoryData">
+    </app-product-purchase-history-table>
+  </div>
+</div>

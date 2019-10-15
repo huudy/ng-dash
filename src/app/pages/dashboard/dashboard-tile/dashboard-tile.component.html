@@ -1,0 +1,9 @@
+<div class="card dashboard-tile border-0 shadow text-center mx-auto">
+  <img class="card-img-top" src="{{tile.img}}">
+  <div class="card-body p-2">
+    <p class="card-text pb-1 pt-3 px-3" [innerHTML]="tile.text"></p>
+  </div>
+  <div class="card-footer bg-white border-top-0">
+    <a class="btn btn-light text-muted btn-block p-1 shadow-sm" routerLink="{{tile.routerLink}}">Show me</a>
+  </div>
+</div>

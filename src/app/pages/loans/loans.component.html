@@ -1,0 +1,63 @@
+<div class="card border-0 shadow">
+  <div class="card-body">
+    <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer"
+      (click)="showUserguide('#loans')"></i>
+    <h2 class="sub_header">LOANS</h2>
+
+    <h5>New loans</h5>
+
+    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+      <label class="btn btn-light btn-sm shadow-sm cursor-pointer active" (click)="updateTimeframe('new', 7)">
+        <input type="radio" checked> last week
+      </label>
+      <label class="btn btn-light btn-sm shadow-sm cursor-pointer" (click)="updateTimeframe('new', 31)">
+        <input type="radio"> last month
+      </label>
+    </div>
+
+    <p>Loans arranged between UniCredit and your clients within the last seven days.</p>
+    <app-new-loans-table *ngIf="dataRetrieved" [data]="newLoansData" [search]="search[0]"></app-new-loans-table>
+
+  </div>
+</div>
+
+<div class="card border-0 shadow my-3">
+  <div class="card-body">
+
+    <h5>Maturing Loans</h5>
+
+    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+      <label class="btn btn-light btn-sm shadow-sm cursor-pointer active" (click)="updateTimeframe('maturing', 7)">
+        <input type="radio" checked> next week
+      </label>
+      <label class="btn btn-light btn-sm shadow-sm cursor-pointer" (click)="updateTimeframe('maturing', 22)">
+        <input type="radio"> next month
+      </label>
+    </div>
+
+    <p>Loans maturing within the next seven business days.</p>
+    <app-maturing-loans-table *ngIf="dataRetrieved" [data]="maturingLoansData" [search]="search[1]"></app-maturing-loans-table>
+
+  </div>
+</div>
+
+<div class="card border-0 shadow">
+  <div class="card-body">
+
+    <h5>Loan interest rate terms expiries</h5>
+
+    <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+      <label class="btn btn-light btn-sm shadow-sm cursor-pointer active" (click)="updateTimeframe('expiring', 7)">
+        <input type="radio" checked> next week
+      </label>
+      <label class="btn btn-light btn-sm shadow-sm cursor-pointer" (click)="updateTimeframe('expiring', 22)">
+        <input type="radio"> next month
+      </label>
+    </div>
+
+    <p>The originally agreed upon interest interest rate terms for the following loans are about to expire. The
+      respective clients might be interested in setting up a hedge covering the remaining duration of the loan.</p>
+    <app-expiring-interest-terms-table *ngIf="dataRetrieved" [data]="loanRateData" [search]="search[2]"></app-expiring-interest-terms-table>
+
+  </div>
+</div>

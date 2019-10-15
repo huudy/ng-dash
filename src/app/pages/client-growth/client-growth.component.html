@@ -1,0 +1,37 @@
+<div class="card border-0 shadow">
+  <div class="card-body">
+    <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#client-growth')"></i>
+    <h2 class="sub_header">CLIENT GROWTH</h2>
+
+    <h5>Target clients</h5>
+    <p>The following clients are either underperforming compared to their peers or have been inactive for a prolonged period of time. At the same time SONAR has identified potential actions that could help revitalizing the client relationship.
+    </p>
+
+  </div>
+</div>
+
+<div class="row" *ngIf="dataRetrieved">
+  <div *ngFor="let client of clients" class="pt-3 col-sm-12 col-xl-6 col-xxl-4">
+    <app-suggested-client-card [data]="client"></app-suggested-client-card>
+  </div>
+</div>
+
+<div class="mt-3">
+  <div class="pageinfo d-flex">
+    <span class="mr-auto">Showing {{clientsLower}} to {{clientsUpper}} of {{clientsTotal}} target clients</span>
+    <div class="btn-group btn-group-sm shadow-sm" role="group">
+      <div class="btn btn-link bg-white border cursor-pointer text-decoration-none" (click)="previousPage()" id="btn_previous">Previous</div>
+      <div class="btn bg-white text-primary border">Page {{clientsCurrentPage}}</div>
+      <div class="btn btn-link bg-white border cursor-pointer text-decoration-none" (click)="nextPage()" id="btn_next" disabled>Next</div>
+    </div>
+  </div>
+</div>
+
+<div class="card border-0 shadow mt-3">
+  <div class="card-body">
+    <h5>Date of last trade</h5>
+    <p>The table shows the last time a particular client traded with us.</p>
+    <app-last-trade-table *ngIf="dataRetrieved" [data]="lastTradeData"></app-last-trade-table>
+
+  </div>
+</div>

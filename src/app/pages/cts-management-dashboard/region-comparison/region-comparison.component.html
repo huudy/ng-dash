@@ -1,0 +1,8 @@
+<div class="row">
+  <div *ngFor="let tile of tiles" class="col-lg-3 col-sm-6 col-xs-12 pb-3">
+    <div class="card h-100 border-0 shadow accent-primary accent-{{tile.accent}}">
+      <div class="card-body text-center small text-{{tile.accent}}" [innerHtml]="tile.text">
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<select class="custom-select" id="currency-select" #s (change)="initializeChart(s.value)">
+  <option value="" selected disabled hidden>Select currency pair</option>
+  <option *ngFor="let key of objectKeys(markupData)" [value]="key">{{key}}</option>
+</select>
+<div class="card-text d-flex align-items-center mt-3" id="markupChartContainer">
+  <div class="mx-auto" style="max-width: 1000px" id="markup_chart_container" (window:resize)="resizeMarkupChart()">
+    <svg id="markup_chart" style="width: 100%; height: calc(100vh - 300px); min-height: 200px;"></svg>
+  </div>
+</div>

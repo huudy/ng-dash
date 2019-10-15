@@ -1,0 +1,8 @@
+<div class="card border-0 shadow">
+  <div class="card-body">
+    <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#activity-levels')"></i>
+    <h2 class="sub_header">ACTIVITY LEVELS</h2>
+    <p>Activity level measures the number of trades of each client compared to an expected value based on past behaviour. The larger the number the better (up to a maximum of 9). Table contains clients with recent negative changes to their activity level.</p>
+    <app-activity-level-table *ngIf="dataRetrieved" [data]="activityLevelData"></app-activity-level-table>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="card border-0 shadow mb-3">
+    <div class="card-body">
+        <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#foreign-exchange-monitoring')"></i>
+        <h2 class="sub_header">FOREIGN EXCHANGE MONITORING</h2>
+        <app-event-calendar *ngIf="dataRetrieved" [data]="calendarData"></app-event-calendar>
+    </div>
+</div>
+<div class="card border-0 shadow">
+    <div class="card-body">
+        <app-technical-analysis-chart *ngIf="dataRetrieved" [data]="technicalAnalysisData"></app-technical-analysis-chart>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="card h-100 border-0 shadow">
+  <div class="card-body p-2">
+    <!-- <button type="button" class="btn btn-light btn-sm shadow-sm float-right" data-toggle="collapse" data-target="#mostRecentTrades">show most recent trades</button> -->
+    <a href="" class="text-decoration-none small float-right" data-toggle="collapse" data-target="#mostRecentTrades">show most recent trades <i class="fas fa-angle-right"></i></a>
+    <div class="font-weight-light text-muted mb-2">Activity level</div>
+    <div class="progress mt-3">
+      <!-- adjust as required -->
+      <div role="progressbar" [style.width]="bar.width" class="progress-bar {{bar.color}}">{{bar.description}}</div>
+      <div role="progressbar" [style.width]="bar.delta" class="progress-bar bg-secondary progress-bar-striped"></div>
+    </div>
+    <div class="collapse" id="mostRecentTrades">
+      <table class="table table-sm table-hover" id="mostRecentTradesTable">
+        <thead class="thead-light">
+          <tr>
+            <th>trade date</th>
+            <th>product <sup class="ml-1"><i class="fas fa-comment-alt"></i></sup></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td colspan="2" style="text-align: center;">No data available</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

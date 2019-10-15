@@ -1,0 +1,10 @@
+  <div class="row">
+    <div *ngFor="let tile of kpiTiles" class="col-lg-3 col-sm-6 col-xs-12 pb-3">
+      <div class="card h-100 border-0 shadow accent-primary">
+        <div class="card-body text-center">
+          <i class="{{tile.icon}} large text-gray-300 float-left ml-2 mr-1 my-1"></i>
+          <span class="font-weight-bold large text-muted">{{tile.value}}</span> {{tile.text}}
+        </div>
+      </div>
+    </div>
+  </div>

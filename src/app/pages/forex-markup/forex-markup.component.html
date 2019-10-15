@@ -1,0 +1,10 @@
+<div class="card border-0 shadow">
+  <div class="card-body">
+    <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#forex-markup')"></i>
+    <h2 class="sub_header">FX MARKUP STATISTICS</h2>
+    <p>Mean markup across all CTS clients in Germany for FX Spot and FX Forward trades. Markup given in basis points (1 bp = 0.01%) of notional or pips where possible. Hover heatmap for details.</p>
+
+    <app-forex-markup-heatmap *ngIf="dataRetrieved" [data]="markupData"></app-forex-markup-heatmap>
+
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="card border-0 shadow">
+  <div class="card-body">
+    <i class="user-guide-helper float-right btn btn-sm text-secondary far fa-question-circle cursor-pointer" (click)="showUserguide('#commodity-exposure')"></i>
+    <h2 class="sub_header">COMMODITY EXPOSURE</h2>
+    <p>Commodities traded within the last 24 months. Outstanding volume is the sum of all notionals of active trades.
+    </p>
+    
+    <app-commodity-exposure-table *ngIf="dataRetrieved" [data]="commodityExposureData"></app-commodity-exposure-table>
+
+  </div>
+</div>
